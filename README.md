@@ -1,9 +1,11 @@
 # Tejer la red
 
-Recurso Educativo Abierto de Favio Velázquez y América Palafox para Educación Social y Tecnología (ANEP-IFES, 2026).
+Recurso Educativo Abierto de Favio Velázquez y América Palafox, ANEP-IFES, Educación Social y Tecnología (2026).
 
-Guía para educadoras y educadores sociales con cinco encuentros sobre inclusión digital de personas mayores a través de obras de Frida Kahlo. El diseño no informa una implementación con residentes. Contiene siete fichas imprimibles y enlaces a fuentes culturales institucionales.
+El sitio está contenido en `index.html`. Incluye cinco encuentros, fuentes culturales institucionales y siete fichas que pueden imprimirse o guardarse como PDF desde el navegador. El cuadernillo único para uso sin conexión se entrega por separado en el paquete académico. El diseño no informa una intervención implementada con residentes.
 
-Los textos, fichas y esquemas originales se ofrecen bajo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es). Las obras y fotografías enlazadas conservan los derechos de sus instituciones.
+Los textos, fichas y esquemas de elaboración propia se ofrecen bajo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es). Las obras y fotografías enlazadas conservan los derechos que indique cada institución.
 
-Para proponer adaptaciones, abrir un Issue sin datos identificables de residentes. La publicación prevista por la pauta del parcial es el 22 de octubre de 2026.
+Sitio público: https://profesor2023.github.io/ · Aportes: https://github.com/Profesor2023/profesor2023.github.io/issues. No publicar datos identificables de residentes.
+
+Versión 1.0 publicada el 17 de setiembre de 2026. Segunda entrega y exposición: 22 de octubre de 2026.
