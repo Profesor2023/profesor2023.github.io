@@ -131,6 +131,44 @@ html.high-contrast .tool-status,html.high-contrast .prep-status,html.high-contra
 @media(max-width:380px){.route-grid{grid-template-columns:1fr}}
 @media print{.reading-progress,.reading-tools,.route-panel,.mode-panel,.prep-panel,#go-top,.menu-toggle{display:none!important}.session{box-shadow:none;break-inside:auto}.nav-links{display:none!important}}
 
+
+/* El contenido académico queda disponible aun cuando JavaScript esté desactivado. */
+.reading-guide,.helper-panel,.voice-panel,.share-panel{border:1px solid #cadceb;background:#f5f9fc;border-radius:12px;padding:1.25rem;margin:1.5rem 0}
+.reading-guide h3,.helper-panel h3,.voice-panel h3,.share-panel h3{margin-top:.1rem}
+.reading-guide .plain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.8rem}
+.plain-grid article{background:#fff;border-left:4px solid var(--azul);border-radius:6px;padding:.8rem}
+.plain-grid p{margin:0}
+.brief{background:#f4f9f3;border-left:4px solid var(--verde);border-radius:5px;padding:.7rem 1rem;margin:1rem 0}
+.brief summary{font-weight:700;color:#245635;cursor:pointer;min-height:44px;display:list-item;padding:.45rem .3rem}
+.brief p{margin:.35rem 0 .7rem}
+.helper-panel .chat-suggestions{display:flex;flex-wrap:wrap;gap:.5rem;margin:.9rem 0}
+.helper-panel .chat-suggestions button,.helper-panel .chat-form button,.voice-panel button,.share-panel button{background:#fff;border:2px solid var(--azul);border-radius:7px;color:var(--azul);font:inherit;font-weight:700;min-height:44px;padding:.45rem .8rem;cursor:pointer}
+.helper-panel .chat-suggestions button:hover,.helper-panel .chat-form button:hover,.voice-panel button:hover,.share-panel button:hover{background:#e2edf7}
+.chat-log{list-style:none;max-height:19rem;overflow-y:auto;display:grid;gap:.6rem;padding:.7rem;background:#fff;border:1px solid #cfdae6;border-radius:9px}
+.chat-log li{max-width:92%;padding:.55rem .75rem;border-radius:8px;line-height:1.55}
+.chat-log .assistant-message{background:#eaf1f9;justify-self:start;border-left:3px solid var(--azul)}
+.chat-log .user-message{background:#e8f3eb;justify-self:end;border-right:3px solid var(--verde)}
+.chat-log li p{margin:0}
+.chat-log li a{color:#164b81;text-decoration:underline}
+.chat-form{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:.85rem}
+.chat-form label{width:100%;font-weight:700}
+.chat-form input{flex:1;min-width:13rem;min-height:44px;border:2px solid #7297b6;border-radius:6px;font:inherit;padding:.45rem .65rem}
+.chat-note,.voice-note{color:#293c4d;font-size:.9rem;margin:.7rem 0 0}
+.voice-panel{display:none}.js-enabled .voice-panel{display:block}
+.voice-actions,.share-actions{display:flex;gap:.55rem;flex-wrap:wrap;margin:.5rem 0}
+.voice-panel button[disabled]{opacity:.62;cursor:not-allowed}
+.voice-status,.share-status{font-size:.9rem;margin:.5rem 0 0;color:#293c4d}
+.voice-button,.share-panel #share-rea{display:none}.js-enabled .voice-button,.js-enabled .share-panel #share-rea{display:inline-block}
+.share-panel #share-rea{background:var(--azul);color:#fff}
+.helper-panel{display:none}.js-enabled .helper-panel{display:block}
+nav .nav-links a{min-height:44px;display:inline-flex;align-items:center;padding:.25rem .35rem}
+.print-action{min-height:44px;touch-action:manipulation}
+.helper-panel button,.voice-panel button,.share-panel button,.print-action{touch-action:manipulation}
+html.high-contrast .reading-guide,html.high-contrast .helper-panel,html.high-contrast .voice-panel,html.high-contrast .share-panel,html.high-contrast .brief{border-color:#0b315c}
+html.high-contrast .brief summary{color:#174725}
+@media(max-width:640px){.chat-form input{width:100%;flex:auto}.chat-form button{width:100%}.chat-log li{max-width:100%}}
+@media print{.helper-panel,.voice-panel,.share-panel,.voice-button{display:none!important}.brief{break-inside:avoid}.brief:not([open]) p{display:block}}
+
 </style>
 </head>
 <body id="inicio">
@@ -142,12 +180,12 @@ html.high-contrast .tool-status,html.high-contrast .prep-status,html.high-contra
  <div class="nav-links" id="site-nav-links">
  <a href="#problema">Problema</a><a href="#destinatarios">Destinatarios</a>
  <a href="#kahlo">Kahlo</a><a href="#secuencia">Secuencia</a>
- <a href="#materiales">Materiales</a><a href="#accesibilidad">Accesibilidad</a><a href="#colaborar">Colaborar</a>
+ <a href="#materiales">Materiales</a><a href="#asistente">Asistente</a><a href="#accesibilidad">Accesibilidad</a><a href="#colaborar">Colaborar</a>
  </div>
 </nav>
 
 <div class="hero">
- <div class="badge">Recurso Educativo Abierto · Versión 1.2 · CC BY-NC-SA 4.0</div>
+ <div class="badge">Recurso Educativo Abierto · Versión 1.3 · CC BY-NC-SA 4.0</div>
  <h1>Tejer la red</h1>
  <p class="sub">Guía para la inclusión digital de personas mayores institucionalizadas<br>a través de la obra de Frida Kahlo</p>
  <p class="meta">Favio Velázquez · América Palafox · ANEP-IFES · Educación Social y Tecnología · 2026</p>
@@ -170,6 +208,15 @@ html.high-contrast .tool-status,html.high-contrast .prep-status,html.high-contra
  <p>Fue elaborada por Favio Velázquez y América Palafox para el primer parcial de Educación Social y Tecnología, ANEP-IFES. El texto, las fichas y los esquemas de elaboración propia se ofrecen bajo licencia abierta CC BY-NC-SA 4.0. Las obras enlazadas conservan los derechos indicados por cada institución.</p>
  <div class="alerta"><p><strong>Alcance del proyecto.</strong> Es un diseño socioeducativo para profesionales, no un informe de una intervención realizada. Sus autores no implementaron la secuencia con residentes en esta Unidad Curricular. Antes de usarla, cada profesional deberá adaptarla al grupo, acordarla con su institución y supervisar la experiencia.</p></div>
  <p><strong>Cómo comenzar:</strong> consulte el perfil de referencia, revise las fichas de las obras, complete la ficha de relevamiento de su dispositivo y adapte los encuentros a los recursos y decisiones de quienes participan.</p>
+<aside class="reading-guide" aria-labelledby="guia-clara-titulo">
+ <h3 id="guia-clara-titulo">Tejer la red en palabras claras</h3>
+ <div class="plain-grid">
+  <article><strong>¿Para quién?</strong><p>Para profesionales de la educación social. Ellos adaptan las actividades a cada grupo de personas mayores.</p></article>
+  <article><strong>¿Qué propone?</strong><p>Cinco encuentros para conocer obras de Frida Kahlo, aprender a buscar fuentes digitales y conversar con otras personas.</p></article>
+  <article><strong>¿Qué se hizo?</strong><p>Se creó y publicó este recurso. Los encuentros todavía no se realizaron con residentes.</p></article>
+ </div>
+ <p class="nota">Este resumen ayuda a orientarse. La fundamentación, las fuentes y las consignas completas siguen disponibles en las secciones de la página.</p>
+</aside>
 <div class="prep-panel" id="preparacion">
  <h3>Preparación de quien facilita</h3>
  <p>Esta lista sirve para organizar un uso futuro del recurso. Marcarla no significa que los encuentros se hayan realizado; no guarda información del grupo.</p>
@@ -240,6 +287,13 @@ html.high-contrast .tool-status,html.high-contrast .prep-status,html.high-contra
  </div>
  <p class="route-status" id="route-status">Acceso directo a los cinco encuentros.</p>
 </div>
+<div class="voice-panel" id="apoyo-voz">
+ <h3>Lectura en voz alta opcional</h3>
+ <p>Podés escuchar los resúmenes de los encuentros con el botón que aparece al abrir cada explicación breve. El texto siempre queda visible; el audio no comienza solo.</p>
+ <div class="voice-actions"><button type="button" id="stop-voice">Detener lectura</button></div>
+ <p class="voice-status" id="voice-status" role="status" aria-live="polite">La voz depende de las opciones disponibles en tu navegador. Se puede detener en cualquier momento.</p>
+ <p class="voice-note">Esta lectura es un apoyo. Puede pronunciar nombres de modo imperfecto y no sustituye un lector de pantalla ni los apoyos humanos de la actividad.</p>
+</div>
 <fieldset class="mode-panel" id="consulta-conexion">
  <legend>¿Con qué conectividad prepararías el encuentro?</legend>
  <div class="mode-options">
@@ -249,7 +303,7 @@ html.high-contrast .tool-status,html.high-contrast .prep-status,html.high-contra
  <p class="mode-response" id="mode-response" role="status" aria-live="polite">Con datos móviles: comprobar previamente las fuentes, compartir el teléfono por turnos y registrar qué decisiones dirige cada persona.</p>
 </fieldset>
     <article class="session" id="encuentro-1">
-      <h3>Encuentro 1: Trayectorias tecnológicas y primera obra</h3>
+      <h3>Encuentro 1: Trayectorias tecnológicas y primera obra</h3><details class="brief"><summary>En pocas palabras · abrir explicación breve</summary><p>Empezamos por los conocimientos de cada persona. Consultamos el registro del autorretrato de 1926 y elegimos una pregunta o un detalle. Nadie tiene que contar experiencias íntimas.</p><button class="voice-button print-action" type="button" data-read-session="encuentro-1">Escuchar este resumen</button></details>
       <p><strong>Propósito:</strong> Reconocer saberes tecnológicos previos y decidir juntos una primera pregunta de exploración.</p>
       <p><strong>Tiempo y materiales:</strong> 40–50 minutos orientativos. Un teléfono con datos para mostrar la fuente; ficha 1 impresa; letra ampliada si hace falta.</p>
       <ol><li>Apertura: invitar a recordar una tecnología significativa en cada trayectoria, sin clasificar a nadie por carencias.</li><li>Exploración: abrir el registro del autorretrato de 1926; identificar autora, título, año e institución; observar qué muestra la ficha y qué no muestra.</li><li>Cierre: pedir a quienes quieran participar que elijan qué aspecto desean seguir mirando o qué palabra usarían para volver a encontrarlo.</li></ol>
@@ -259,7 +313,7 @@ html.high-contrast .tool-status,html.high-contrast .prep-status,html.high-contra
       <button type="button" class="print-action" data-sheet="ficha-1">Imprimir o guardar la ficha 1 como PDF</button>
     </article>
     <article class="session" id="encuentro-2">
-      <h3>Encuentro 2: Navegar en pantalla compartida</h3>
+      <h3>Encuentro 2: Navegar en pantalla compartida</h3><details class="brief"><summary>En pocas palabras · abrir explicación breve</summary><p>Buscamos Mi familia en una fuente cultural. Compartimos el teléfono y aprendemos a volver a la ficha. Una persona puede dirigir la búsqueda aunque otra maneje la pantalla.</p><button class="voice-button print-action" type="button" data-read-session="encuentro-2">Escuchar este resumen</button></details>
       <p><strong>Propósito:</strong> Abrir una ficha institucional, ampliarla y regresar a ella con apoyos graduados.</p>
       <p><strong>Tiempo y materiales:</strong> 40–50 minutos orientativos. Dispositivos con datos compartidos entre duplas o tríadas y turnos previstos; ficha 2.</p>
       <ol><li>Apertura: recuperar qué datos ayudan a reconocer una fuente cultural confiable.</li><li>Exploración: en grupos pequeños, abrir Mi familia; distribuir turnos para tocar el enlace, ampliar la imagen o texto y volver a la ficha. La persona que no maneja el teléfono puede decidir el siguiente paso.</li><li>Cierre: conversar sobre una relación o recuerdo sugerido por la obra, sin solicitar historias personales sensibles.</li></ol>
@@ -269,7 +323,7 @@ html.high-contrast .tool-status,html.high-contrast .prep-status,html.high-contra
       <button type="button" class="print-action" data-sheet="ficha-2">Imprimir o guardar la ficha 2 como PDF</button>
     </article>
     <article class="session" id="encuentro-3">
-      <h3>Encuentro 3: Buscar, elegir e interpretar</h3>
+      <h3>Encuentro 3: Buscar, elegir e interpretar</h3><details class="brief"><summary>En pocas palabras · abrir explicación breve</summary><p>Consultamos la ficha del autorretrato con collar de espinas y colibrí. Separamos datos, detalles visibles e interpretaciones. Escuchamos distintas lecturas.</p><button class="voice-button print-action" type="button" data-read-session="encuentro-3">Escuchar este resumen</button></details>
       <p><strong>Propósito:</strong> Diferenciar los datos de la ficha, los elementos visibles y las interpretaciones personales.</p>
       <p><strong>Tiempo y materiales:</strong> 40–50 minutos orientativos. Teléfono compartido y ficha 3; un apoyo escrito con título y palabras clave para quien lo necesite.</p>
       <ol><li>Apertura: mostrar dos maneras de encontrar la obra: usar el enlace y buscar título más autora.</li><li>Exploración: consultar la ficha del Harry Ransom Center; una persona elige un detalle, otra indica dónde figura el título o la institución y otra propone una pregunta.</li><li>Cierre: cada participante que quiera compartir dice qué elemento observó y qué interpretación le suscita, distinguiendo ambas cosas.</li></ol>
@@ -279,7 +333,7 @@ html.high-contrast .tool-status,html.high-contrast .prep-status,html.high-contra
       <button type="button" class="print-action" data-sheet="ficha-3">Imprimir o guardar la ficha 3 como PDF</button>
     </article>
     <article class="session" id="encuentro-4">
-      <h3>Encuentro 4: Autorretrato, documentos e identidad digital</h3>
+      <h3>Encuentro 4: Autorretrato, documentos e identidad digital</h3><details class="brief"><summary>En pocas palabras · abrir explicación breve</summary><p>Consultamos una fotografía de Kahlo junto al cuadro: no es el óleo original. Pensamos qué mostrar y qué mantener privado. No pedimos fotos ni datos de residentes.</p><button class="voice-button print-action" type="button" data-read-session="encuentro-4">Escuchar este resumen</button></details>
       <p><strong>Propósito:</strong> Pensar quién decide cómo se representa a una persona y distinguir lo público de lo privado.</p>
       <p><strong>Tiempo y materiales:</strong> 40–50 minutos orientativos. Fotografía de archivo enlazada y ficha 4; no solicitar fotos ni datos personales de residentes.</p>
       <ol><li>Apertura: identificar que la fuente es una fotografía de Kahlo con su pintura y no la ficha directa del cuadro.</li><li>Exploración: observar qué se puede saber por la fotografía y qué información falta; conversar sobre decisiones al mostrar algo propio en un medio digital.</li><li>Cierre: formular, sin publicar nada, una regla que cada quien usaría para decidir qué compartir o conservar en privado.</li></ol>
@@ -289,7 +343,7 @@ html.high-contrast .tool-status,html.high-contrast .prep-status,html.high-contra
       <button type="button" class="print-action" data-sheet="ficha-4">Imprimir o guardar la ficha 4 como PDF</button>
     </article>
     <article class="session" id="encuentro-5">
-      <h3>Encuentro 5: Producción colectiva y decisión de circulación</h3>
+      <h3>Encuentro 5: Producción colectiva y decisión de circulación</h3><details class="brief"><summary>En pocas palabras · abrir explicación breve</summary><p>Consultamos Viva la vida. Si el grupo lo desea, crea un texto o audio breve. Decide dónde conservarlo. Publicarlo no es obligatorio.</p><button class="voice-button print-action" type="button" data-read-session="encuentro-5">Escuchar este resumen</button></details>
       <p><strong>Propósito:</strong> Elaborar una producción digital breve y decidir colectivamente dónde quedará.</p>
       <p><strong>Tiempo y materiales:</strong> 40–60 minutos orientativos. Un teléfono con editor de texto o grabadora por grupo, ficha 5 y acceso previo a Viva la vida.</p>
       <ol><li>Apertura: visitar la ficha institucional y distinguir la fecha de la obra de la fecha de su inscripción.</li><li>Exploración: crear en grupo un texto breve o audio sobre lo que la obra les hizo pensar. Rotar el dispositivo para que todas las personas puedan decidir palabras, ordenar ideas o editar.</li><li>Cierre: decidir si el archivo queda solo en el grupo. Cualquier circulación posterior requiere consentimiento específico y revisión del protocolo institucional.</li></ol>
@@ -298,7 +352,32 @@ html.high-contrast .tool-status,html.high-contrast .prep-status,html.high-contra
       <p><strong>Fuente cultural:</strong> <a href="https://artsandculture.google.com/asset/viva-la-vida/bAGbsL-eW4XUXg?hl=es" target="_blank" rel="noopener noreferrer">Abrir la ficha institucional o el registro de archivo (abre otra pestaña)</a>.</p>
       <button type="button" class="print-action" data-sheet="ficha-5">Imprimir o guardar la ficha 5 como PDF</button>
     </article>
-</section><section id="materiales">
+</section><section id="asistente" aria-labelledby="asistente-titulo">
+ <h2 id="asistente-titulo">Asistente para consultar el REA</h2>
+ <p>Este asistente funciona con respuestas preparadas a partir del recurso. <strong>No es una IA generativa:</strong> no inventa información, no se conecta a un servicio externo y no registra preguntas. Para una respuesta completa, seguí el enlace a la sección indicada.</p>
+ <div class="helper-panel">
+  <h3>Preguntas habituales</h3>
+  <div class="chat-suggestions" aria-label="Preguntas sugeridas">
+   <button type="button" data-question="que-es">¿Qué es el REA?</button>
+   <button type="button" data-question="sin-wifi">¿Qué hago sin wifi?</button>
+   <button type="button" data-question="privacidad">¿Cómo cuido la privacidad?</button>
+   <button type="button" data-question="participacion">¿Cómo participar sin celular?</button>
+   <button type="button" data-question="obras">¿Dónde están las obras?</button>
+   <button type="button" data-question="implementacion">¿Ya se hizo el taller?</button>
+  </div>
+  <ol class="chat-log" id="chat-log" role="log" aria-live="polite" aria-label="Conversación de orientación">
+   <li class="assistant-message"><p>Hola. Elegí una pregunta o escribí una consulta breve sobre este recurso. Si no encuentro una respuesta segura, te indicaré dónde buscarla.</p></li>
+  </ol>
+  <form id="chat-form" class="chat-form">
+   <label for="chat-question">Tu pregunta sobre el proyecto</label>
+   <input id="chat-question" name="pregunta" type="text" maxlength="180" autocomplete="off" placeholder="Por ejemplo: ¿cómo descargo las fichas?" aria-describedby="chat-caution" required>
+   <button type="submit">Consultar</button>
+  </form>
+  <p class="chat-note" id="chat-caution">No escribas nombres, datos de salud ni información de residentes. Las preguntas quedan solo en esta página mientras está abierta.</p>
+ </div>
+ <noscript><p>Las respuestas guiadas necesitan JavaScript. Toda la información y los enlaces están disponibles en el REA y en las fichas descargables.</p></noscript>
+</section>
+<section id="materiales">
  <h2>Materiales para adaptar e imprimir</h2>
  <p><a class="print-action" href="Materiales_uso_sin_conexion.pdf" download="Materiales_uso_sin_conexion.pdf">Descargar el cuadernillo completo en PDF · siete fichas</a></p>
  <p>El cuadernillo reúne cinco fichas de encuentros, una de relevamiento y una de devolución. También podés imprimir o guardar cada ficha por separado desde los botones de esta página. El PDF es liviano y contiene solo textos propios: no incluye reproducciones de las pinturas ni las fotografías enlazadas. Descargalo antes del taller. Si falta conexión, usalo para preparar preguntas y conversar; la observación visual de las obras y la navegación se retomarán cuando sea posible abrir las fuentes culturales.</p>
@@ -327,10 +406,17 @@ html.high-contrast .tool-status,html.high-contrast .prep-status,html.high-contra
  <p>Una persona educadora que adapte la propuesta puede dejar constancia de la situación inicial, los cambios que hizo, las barreras encontradas y los aprendizajes observados. La ficha de devolución permite registrar esos aportes sin identificar residentes. Las propuestas que se incorporen a versiones nuevas deben citar la contribución de quien las formuló.</p>
  <p><button type="button" class="print-action" data-sheet="devolucion">Imprimir o guardar la ficha de devolución como PDF</button></p>
  <p><strong>Canal de aportes:</strong> <a href="https://github.com/Profesor2023/profesor2023.github.io/issues">proponer una mejora en GitHub Issues</a>. Para comentar se requiere una cuenta GitHub; la lectura del REA no exige registro. No se suben datos ni producciones identificables de residentes a un canal público.</p>
+ <div class="share-panel" id="contacto-recurso">
+ <h3>Compartir o proponer una mejora</h3>
+ <p>Podés compartir el enlace del REA usando las opciones de tu teléfono o copiarlo. Para consultas sobre el contenido y propuestas profesionales, usá el canal de GitHub Issues ya indicado. No publiques allí datos de residentes.</p>
+ <div class="share-actions"><button type="button" id="share-rea">Compartir enlace</button></div>
+ <p id="share-status" class="share-status" role="status" aria-live="polite"></p>
+</div>
  <h3>Historial de versiones</h3>
  <p><strong>Versión 1.0 — publicada el 17 de setiembre de 2026.</strong> Diseño de Favio Velázquez y América Palafox para Educación Social y Tecnología, ANEP-IFES.</p>
  <p><strong>Versión 1.1 — revisada el 18 de setiembre de 2026.</strong> Se incorporó la descarga directa del cuadernillo y se explicitaron las señales de aprendizaje digital y encuentro social.</p>
- <p><strong>Versión 1.2 — revisada el 18 de setiembre de 2026.</strong> Se añadieron herramientas de lectura, navegación móvil, acceso rápido a los encuentros, una lista local de preparación y orientaciones según la conectividad. No se recopilan datos de visitantes ni se registran talleres. Segunda entrega y presentación previstas para el 22 de octubre. Las mejoras posteriores se documentarán en el repositorio.</p>
+ <p><strong>Versión 1.2 — revisada el 18 de setiembre de 2026.</strong> Se añadieron herramientas de lectura, navegación móvil, acceso rápido a los encuentros, una lista local de preparación y orientaciones según la conectividad.</p>
+ <p><strong>Versión 1.3 — revisada el 18 de setiembre de 2026.</strong> Se añadieron explicaciones breves, un asistente de respuestas preparadas, lectura opcional en voz alta y una opción para compartir el enlace. No hay música automática ni envío de preguntas o datos personales. Segunda entrega y presentación previstas para el 22 de octubre; los encuentros todavía no se implementaron.</p>
 </section><section id="licencia">
  <h2>Licencia y atribución</h2>
  <div class="lic">
@@ -359,7 +445,7 @@ html.high-contrast .tool-status,html.high-contrast .prep-status,html.high-contra
 
 <article id="ficha-1" class="print-sheet"><h1>Tejer la red · Ficha del encuentro 1</h1><p>Material para adaptar en una implementación futura. No registrar datos personales sensibles.</p><h2>Trayectorias tecnológicas y primera obra</h2><p><strong>Fuente:</strong> https://artsandculture.google.com/asset/self-portrait-wearing-a-velvet-dress/9QHUrLhK3UEXqw?hl=es</p><p><strong>Pregunta inicial:</strong> ¿Qué te gustaría observar o saber de esta obra?</p><p>Lo que vemos en la ficha institucional:</p><div class="line"></div><div class="line"></div><p>Lo que cada persona elige preguntar, interpretar o conservar en privado:</p><div class="line"></div><div class="line"></div><p>Un paso de navegación realizado o decidido por el grupo y apoyo recibido:</p><div class="line"></div><div class="line"></div><p>Acuerdo sobre dónde quedará la producción, si la hubo:</p><div class="line"></div><p style="font-size:10pt;margin-top:1.5rem">Velázquez y Palafox · ANEP-IFES · CC BY-NC-SA 4.0 · 2026</p></article><article id="ficha-2" class="print-sheet"><h1>Tejer la red · Ficha del encuentro 2</h1><p>Material para adaptar en una implementación futura. No registrar datos personales sensibles.</p><h2>Navegar en pantalla compartida</h2><p><strong>Fuente:</strong> https://artsandculture.google.com/asset/mi-familia-inconcluso/pwHWYVOnhtEenQ?hl=es</p><p><strong>Pregunta inicial:</strong> ¿Qué te gustaría observar o saber de esta obra?</p><p>Lo que vemos en la ficha institucional:</p><div class="line"></div><div class="line"></div><p>Lo que cada persona elige preguntar, interpretar o conservar en privado:</p><div class="line"></div><div class="line"></div><p>Un paso de navegación realizado o decidido por el grupo y apoyo recibido:</p><div class="line"></div><div class="line"></div><p>Acuerdo sobre dónde quedará la producción, si la hubo:</p><div class="line"></div><p style="font-size:10pt;margin-top:1.5rem">Velázquez y Palafox · ANEP-IFES · CC BY-NC-SA 4.0 · 2026</p></article><article id="ficha-3" class="print-sheet"><h1>Tejer la red · Ficha del encuentro 3</h1><p>Material para adaptar en una implementación futura. No registrar datos personales sensibles.</p><h2>Buscar, elegir e interpretar</h2><p><strong>Fuente:</strong> https://www.hrc.utexas.edu/frida-kahlo-self-portrait/</p><p><strong>Pregunta inicial:</strong> ¿Qué te gustaría observar o saber de esta obra?</p><p>Lo que vemos en la ficha institucional:</p><div class="line"></div><div class="line"></div><p>Lo que cada persona elige preguntar, interpretar o conservar en privado:</p><div class="line"></div><div class="line"></div><p>Un paso de navegación realizado o decidido por el grupo y apoyo recibido:</p><div class="line"></div><div class="line"></div><p>Acuerdo sobre dónde quedará la producción, si la hubo:</p><div class="line"></div><p style="font-size:10pt;margin-top:1.5rem">Velázquez y Palafox · ANEP-IFES · CC BY-NC-SA 4.0 · 2026</p></article><article id="ficha-4" class="print-sheet"><h1>Tejer la red · Ficha del encuentro 4</h1><p>Material para adaptar en una implementación futura. No registrar datos personales sensibles.</p><h2>Autorretrato, documentos e identidad digital</h2><p><strong>Fuente:</strong> https://artsandculture.google.com/asset/fotograf%C3%ADa-de-frida-kahlo-con-su-pintura-autorretrato-como-tehuana-unidentified/gAGR-5t_1Z_wXw?hl=es-419</p><p><strong>Pregunta inicial:</strong> ¿Qué te gustaría observar o saber de esta obra?</p><p>Lo que vemos en la ficha institucional:</p><div class="line"></div><div class="line"></div><p>Lo que cada persona elige preguntar, interpretar o conservar en privado:</p><div class="line"></div><div class="line"></div><p>Un paso de navegación realizado o decidido por el grupo y apoyo recibido:</p><div class="line"></div><div class="line"></div><p>Acuerdo sobre dónde quedará la producción, si la hubo:</p><div class="line"></div><p style="font-size:10pt;margin-top:1.5rem">Velázquez y Palafox · ANEP-IFES · CC BY-NC-SA 4.0 · 2026</p></article><article id="ficha-5" class="print-sheet"><h1>Tejer la red · Ficha del encuentro 5</h1><p>Material para adaptar en una implementación futura. No registrar datos personales sensibles.</p><h2>Producción colectiva y decisión de circulación</h2><p><strong>Fuente:</strong> https://artsandculture.google.com/asset/viva-la-vida/bAGbsL-eW4XUXg?hl=es</p><p><strong>Pregunta inicial:</strong> ¿Qué te gustaría observar o saber de esta obra?</p><p>Lo que vemos en la ficha institucional:</p><div class="line"></div><div class="line"></div><p>Lo que cada persona elige preguntar, interpretar o conservar en privado:</p><div class="line"></div><div class="line"></div><p>Un paso de navegación realizado o decidido por el grupo y apoyo recibido:</p><div class="line"></div><div class="line"></div><p>Acuerdo sobre dónde quedará la producción, si la hubo:</p><div class="line"></div><p style="font-size:10pt;margin-top:1.5rem">Velázquez y Palafox · ANEP-IFES · CC BY-NC-SA 4.0 · 2026</p></article><article id="perfil" class="print-sheet"><h1>Tejer la red · Ficha de relevamiento del dispositivo</h1><p>Material para adaptar en una implementación futura. No registrar datos personales sensibles.</p><p>Tipo de establecimiento y fecha del relevamiento (sin nombres de residentes):</p><div class="line"></div><p>Intereses expresados por el grupo y objetivos institucionales pertinentes:</p><div class="line"></div><div class="line"></div><p>Dispositivos y conectividad disponibles; cantidad para organizar turnos:</p><div class="line"></div><div class="line"></div><p>Apoyos visuales, auditivos, de motricidad o lingüísticos que el grupo acuerde:</p><div class="line"></div><div class="line"></div><p>Horario posible, coordinación previa y referente institucional:</p><div class="line"></div><p>Adaptaciones previstas y forma de registrar decisiones sin identificar personas:</p><div class="line"></div><div class="line"></div><p style="font-size:10pt;margin-top:1.5rem">Velázquez y Palafox · ANEP-IFES · CC BY-NC-SA 4.0 · 2026</p></article><article id="devolucion" class="print-sheet"><h1>Tejer la red · Ficha de devolución de una implementación</h1><p>Material para adaptar en una implementación futura. No registrar datos personales sensibles.</p><p>Institución o tipo de dispositivo (usar denominación genérica si corresponde):</p><div class="line"></div><p>Fecha de los encuentros y profesional que desea figurar como contribuyente:</p><div class="line"></div><p>Qué se adaptó y por qué:</p><div class="line"></div><div class="line"></div><p>Qué elecciones o aprendizajes se observaron; qué apoyos fueron necesarios:</p><div class="line"></div><div class="line"></div><p>Qué no funcionó y qué cambiaría:</p><div class="line"></div><div class="line"></div><p>Materiales propuestos para otra versión, sin datos identificables:</p><div class="line"></div><div class="line"></div><p style="font-size:10pt;margin-top:1.5rem">Velázquez y Palafox · ANEP-IFES · CC BY-NC-SA 4.0 · 2026</p></article><footer>
  <p><strong>Tejer la red</strong> · Velázquez, F. y Palafox, A. (2026) · ANEP–IFES · Carrera Educador Social</p>
- <p style="margin-top:.5rem">Versión 1.2 · Edición 2026 · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener">Licencia CC BY-NC-SA 4.0</a></p>
+ <p style="margin-top:.5rem">Versión 1.3 · Edición 2026 · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener">Licencia CC BY-NC-SA 4.0</a></p>
 </footer>
 <a id="go-top" href="#inicio" aria-label="Volver al comienzo" title="Volver al comienzo">↑</a>
 <script>
@@ -452,6 +538,80 @@ window.addEventListener('afterprint',function(){document.body.classList.remove('
   var cite=document.getElementById('cita-rea').textContent.trim();
   if(!navigator.clipboard||!navigator.clipboard.writeText){status.textContent='Seleccioná y copiá la cita que figura arriba.';return;}
   navigator.clipboard.writeText(cite).then(function(){status.textContent='Cita copiada.';},function(){status.textContent='Seleccioná y copiá la cita que figura arriba.';});
+ });
+})();
+
+(function(){
+ 'use strict';
+ var answers={
+  'que-es':{text:'Es una guía abierta para educadores sociales. Propone cinco encuentros con obras de Kahlo para aprender a consultar fuentes digitales y conversar en grupo. Los encuentros todavía no se implementaron.',link:'#sobre',label:'Sobre este recurso'},
+  'sin-wifi':{text:'Descargá las fichas antes de la actividad. Sin conexión podés sostener consignas y conversación, pero el PDF no trae pinturas: la observación visual de las obras y la práctica de navegación se reprograman.',link:'#materiales',label:'Materiales descargables'},
+  privacidad:{text:'No se solicitan fotos ni historias íntimas. Una producción puede quedar solo en el grupo. Para difundir algo después se necesita consentimiento específico y acuerdo institucional.',link:'#privacidad',label:'Privacidad y decisión de compartir'},
+  participacion:{text:'Se puede trabajar en duplas o tríadas. Quien no toca la pantalla puede indicar qué buscar, elegir un detalle o decidir el siguiente paso. La persona educadora adapta apoyos y turnos.',link:'#accesibilidad',label:'Accesibilidad aplicada'},
+  obras:{text:'Las cinco obras se consultan mediante enlaces a instituciones culturales. El cuadernillo propio no reproduce pinturas ni fotografías ajenas. En el primer y el cuarto encuentro las fuentes disponibles son registros fotográficos relacionados con las obras.',link:'#kahlo',label:'Fuentes culturales'},
+  implementacion:{text:'No. Se diseñó y publicó el REA, pero sus autores no realizaron los encuentros con residentes en esta unidad curricular. Las señales de aprendizaje e interacción son previsiones para un uso futuro.',link:'#sobre',label:'Alcance del proyecto'},
+  fichas:{text:'Desde Materiales podés descargar el cuadernillo completo o imprimir cada ficha por separado. Descargalo antes de salir de una zona con conexión.',link:'#materiales',label:'Descargar las fichas'},
+  tecnologia:{text:'La tecnología es contenido de aprendizaje, medio para acceder a fuentes culturales e instrumento para crear y publicar este recurso abierto.',link:'#tecnologia',label:'Las tres funciones de la tecnología'},
+  contacto:{text:'Para sugerencias profesionales podés usar GitHub Issues desde la sección Cómo contribuir. Ese canal es público: no publiques nombres, fotos ni producciones identificables de residentes.',link:'#colaborar',label:'Canal de aportes'}
+ };
+ function normalize(value){return value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();}
+ function findAnswer(value){
+  var v=normalize(value);
+  if(/sin (wifi|wi.?fi|conexion|internet|datos)|no (hay|tengo) (wifi|conexion|datos)|offline/.test(v))return 'sin-wifi';
+  if(/privac|consent|fotograf|datos personales|compartir (una|la) produccion/.test(v))return 'privacidad';
+  if(/sin (celular|telefono)|no (tiene|tengo) (celular|telefono)|duplas|triadas|turnos/.test(v))return 'participacion';
+  if(/implement|realiz|ya (se hizo|hicieron)|resultados|taller/.test(v))return 'implementacion';
+  if(/obra|pintura|frida|kahlo|museo/.test(v))return 'obras';
+  if(/descarg|imprim|fichas|cuadernillo|pdf/.test(v))return 'fichas';
+  if(/tecnolog|contenido|medio|instrumento/.test(v))return 'tecnologia';
+  if(/contact|correo|redes|aportar|suger/.test(v))return 'contacto';
+  if(/que es|para que|para quien|rea|recurso/.test(v))return 'que-es';
+  return null;
+ }
+ var log=document.getElementById('chat-log');
+ function addMessage(kind,text,answer){
+  var li=document.createElement('li');li.className=kind==='user'?'user-message':'assistant-message';
+  var p=document.createElement('p');p.textContent=text;li.appendChild(p);
+  if(answer){var a=document.createElement('a');a.href=answer.link;a.textContent='Leer: '+answer.label;li.appendChild(a);}
+  log.appendChild(li);log.scrollTop=log.scrollHeight;
+ }
+ function respond(value,forced){
+  addMessage('user',value);
+  var answer=answers[forced||findAnswer(value)];
+  if(answer){addMessage('assistant',answer.text,answer);}
+  else{addMessage('assistant','No encuentro una respuesta segura para esa consulta. Revisá la secuencia completa o dejá una propuesta profesional en GitHub Issues.',{link:'#secuencia',label:'Secuencia completa'});}
+ }
+ document.querySelectorAll('[data-question]').forEach(function(b){b.addEventListener('click',function(){respond(b.textContent,b.getAttribute('data-question'));});});
+ document.getElementById('chat-form').addEventListener('submit',function(ev){
+  ev.preventDefault();var input=document.getElementById('chat-question');var value=input.value.trim();
+  if(!value)return;respond(value);input.value='';input.focus();
+ });
+
+ var voiceStatus=document.getElementById('voice-status');
+ var available='speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+ var readButtons=Array.prototype.slice.call(document.querySelectorAll('[data-read-session]'));
+ var stop=document.getElementById('stop-voice');
+ if(!available){readButtons.forEach(function(b){b.disabled=true;});stop.disabled=true;voiceStatus.textContent='Este navegador no ofrece lectura en voz alta. Los resúmenes escritos siguen disponibles.';}
+ else{
+  readButtons.forEach(function(b){b.addEventListener('click',function(){
+   var section=document.getElementById(b.getAttribute('data-read-session'));
+   var text=section.querySelector('.brief p').textContent;
+   window.speechSynthesis.cancel();
+   var utterance=new SpeechSynthesisUtterance(text);utterance.lang='es-UY';utterance.rate=.9;
+   utterance.onend=function(){voiceStatus.textContent='Lectura terminada. El texto permanece visible.';};
+   utterance.onerror=function(){voiceStatus.textContent='No se pudo reproducir la voz. Podés leer el resumen en pantalla.';};
+   window.speechSynthesis.speak(utterance);
+   voiceStatus.textContent='Leyendo el resumen. Podés detenerlo en cualquier momento.';
+  });});
+  stop.addEventListener('click',function(){window.speechSynthesis.cancel();voiceStatus.textContent='Lectura detenida.';});
+  document.addEventListener('visibilitychange',function(){if(document.hidden)window.speechSynthesis.cancel();});
+ }
+
+ document.getElementById('share-rea').addEventListener('click',function(){
+  var url='https://profesor2023.github.io/';var status=document.getElementById('share-status');
+  if(navigator.share){navigator.share({title:'Tejer la red · REA',url:url}).then(function(){status.textContent='Elegiste una opción para compartir.';},function(){status.textContent='No se compartió el enlace.';});return;}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(function(){status.textContent='Enlace copiado.';},function(){status.textContent='Copiá esta dirección: '+url;});return;}
+  status.textContent='Copiá esta dirección: '+url;
  });
 })();
 </script></body>
