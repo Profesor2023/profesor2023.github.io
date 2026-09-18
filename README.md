@@ -1,11 +1,18 @@
-# Tejer la red
+# Tejer la red · REA
 
-Recurso Educativo Abierto de Favio Velázquez y América Palafox, ANEP-IFES, Educación Social y Tecnología (2026).
+Recurso Educativo Abierto de Favio Velázquez y América Palafox para Educación Social y Tecnología, ANEP-IFES (2026).
 
-El sitio está contenido en `index.html`. Incluye cinco encuentros, fuentes culturales institucionales y siete fichas que pueden imprimirse o guardarse como PDF desde el navegador. El cuadernillo único para uso sin conexión se entrega por separado en el paquete académico. El diseño no informa una intervención implementada con residentes.
+Sitio público: https://profesor2023.github.io/  
+Código y versiones: https://github.com/Profesor2023/profesor2023.github.io  
+Aportes profesionales: https://github.com/Profesor2023/profesor2023.github.io/issues
 
-Los textos, fichas y esquemas de elaboración propia se ofrecen bajo [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es). Las obras y fotografías enlazadas conservan los derechos que indique cada institución.
+## Archivos de publicación
 
-Sitio público: https://profesor2023.github.io/ · Aportes: https://github.com/Profesor2023/profesor2023.github.io/issues. No publicar datos identificables de residentes.
+- `index.html`: página del REA con cinco encuentros y fichas individuales imprimibles.
+- `Materiales_uso_sin_conexion.pdf`: cuadernillo único descargable desde la página, con cinco fichas de encuentro, una de relevamiento y una de devolución (nueve páginas contando las instrucciones).
 
-Versión 1.0 publicada el 17 de setiembre de 2026. Segunda entrega y exposición: 22 de octubre de 2026.
+La versión 1.0 se publicó el 17 de setiembre de 2026. La versión 1.1, revisada el 18 de setiembre, añadió la descarga directa del cuadernillo y explicitó señales observables de aprendizaje y de encuentro para una aplicación futura. La segunda presentación está prevista para el 22 de octubre.
+
+El cuadernillo contiene únicamente materiales de autoría del equipo; no reproduce pinturas ni fotografías ajenas. Sin conexión permite trabajar consignas y registrar decisiones, mientras que la observación visual de las obras y la navegación digital requieren acceder a las fuentes culturales o contar con materiales autorizados. El REA **no documenta encuentros realizados con residentes**.
+
+Licencia para textos, fichas y esquemas propios: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es). Las obras y fotografías enlazadas mantienen los derechos de sus respectivas instituciones. No publicar en Issues nombres, imágenes ni producciones identificables de residentes.
