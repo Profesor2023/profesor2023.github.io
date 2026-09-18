@@ -83,21 +83,83 @@ body.printing .print-sheet.active{display:block!important;padding:0 1cm;font-siz
 body.printing .print-sheet.active h1{font-size:20pt;color:#1B4F8A;margin-bottom:1rem}
 body.printing .print-sheet.active h2{font-size:14pt;color:#1B4F8A;border:0;padding:0}
 body.printing .print-sheet.active p{margin:.5rem 0}}
+
+/* Interacciones ligeras: sin librerías ni almacenamiento de datos personales. */
+html{font-size:100%}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+.skip-link{position:absolute;left:1rem;top:-5rem;z-index:300;background:#fff;color:#123c6b;padding:.65rem 1rem;border:2px solid #123c6b}
+.skip-link:focus{top:.5rem}
+.reading-progress{position:fixed;top:0;left:0;right:0;height:4px;z-index:210;background:transparent;pointer-events:none}
+.reading-progress span{display:block;width:0;height:100%;background:var(--oro);transition:width .1s linear}
+.nav-links{display:flex;align-items:center;gap:1.15rem;flex-wrap:wrap}
+.menu-toggle{display:none;background:transparent;border:1px solid #fff;border-radius:5px;color:#fff;font:inherit;padding:.3rem .75rem;cursor:pointer}
+.reading-tools{display:none;background:#eaf2f8;border-bottom:1px solid #cfdfed;padding:.8rem 1.5rem}
+.js-enabled .reading-tools{display:block}
+.reading-tools .tool-inner{max-width:960px;margin:auto;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.reading-tools strong{margin-right:.35rem}
+.reading-tools button,.mode-options button{background:#fff;border:2px solid var(--azul);color:var(--azul);border-radius:6px;font:inherit;font-weight:700;min-height:44px;padding:.35rem .75rem;cursor:pointer}
+.reading-tools button:hover,.mode-options button:hover{background:#e0ecf7}
+.reading-tools button[aria-pressed="true"],.mode-options button[aria-pressed="true"]{background:var(--azul);color:#fff}
+.tool-status{font-size:.83rem;color:#33465a;margin-left:auto}
+.prep-panel,.mode-panel,.route-panel{background:#f5f9fc;border:1px solid #d2e3f0;border-radius:12px;padding:1.35rem;margin:1.3rem 0 1.8rem}
+.prep-panel h3,.route-panel h3{margin:.15rem 0 .45rem}
+.prep-checklist{display:grid;gap:.5rem;margin:.85rem 0}
+.prep-checklist label{display:flex;align-items:flex-start;gap:.65rem;background:#fff;border:1px solid #dce7ef;border-radius:7px;padding:.6rem .8rem;cursor:pointer}
+.prep-checklist input{width:1.2rem;height:1.2rem;flex:none;accent-color:var(--azul);margin-top:.18rem}
+.prep-checklist label:has(input:checked){background:#e7f2e9;border-color:#679976}
+.prep-status,.mode-response,.route-status{font-size:.9rem;color:#32485d;margin:0}
+.mode-panel{display:none}
+.js-enabled .mode-panel{display:block}
+.mode-panel legend{font-weight:700;color:var(--azul);padding:0 .3rem}
+.mode-options{display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0 .9rem}
+.mode-response{background:#fff;border-left:4px solid var(--azul);padding:.65rem .85rem}
+.route-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:.65rem;margin:1rem 0 .8rem}
+.route-grid a{display:flex;align-items:center;gap:.55rem;background:#fff;border:1px solid #c3d6e5;border-radius:8px;padding:.65rem;color:var(--azul);font-weight:700;line-height:1.3;text-decoration:none;min-height:64px;transition:transform .15s,box-shadow .15s}
+.route-grid a:hover,.route-grid a[aria-current="location"]{box-shadow:0 3px 12px #16334d22;transform:translateY(-2px);border-color:var(--azul)}
+.route-grid .step{display:inline-flex;flex:none;width:2rem;height:2rem;align-items:center;justify-content:center;border-radius:50%;background:var(--azul);color:#fff}
+.session{padding:1.35rem;background:#fff;box-shadow:0 3px 18px #143c6811;border:1px solid #dce6ef;border-top:4px solid var(--azul);border-radius:9px;margin:1rem 0 1.2rem;scroll-margin-top:6rem}
+.session:last-child{border-bottom:1px solid #dce6ef}
+.obra,.card,.dest>div{transition:box-shadow .15s,transform .15s}
+.obra:hover,.card:hover,.dest>div:hover{box-shadow:0 4px 18px #16334d1b;transform:translateY(-2px)}
+#go-top{position:fixed;right:1rem;bottom:1rem;z-index:120;background:var(--azul);color:#fff;border-radius:50%;width:3.1rem;height:3.1rem;display:none;align-items:center;justify-content:center;text-decoration:none;font-size:1.5rem;box-shadow:0 4px 12px #13283c55}
+#go-top.is-visible{display:flex}
+#copy-citation{display:none}.js-enabled #copy-citation{display:inline-block}
+html.high-contrast{--azul:#093365;--cel:#064e87;--rojo:#8f2614;--oro:#785000;--verde:#205632;--gris:#252525;--gc:#f4f4f4;--ng:#000}
+html.high-contrast .prep-panel,html.high-contrast .mode-panel,html.high-contrast .route-panel,html.high-contrast .session{border-color:#102d4a}
+html.high-contrast .tool-status,html.high-contrast .prep-status,html.high-contrast .mode-response,html.high-contrast .route-status{color:#102d4a}
+@media(max-width:700px){nav{justify-content:space-between}.js-enabled .menu-toggle{display:inline-block}.nav-links{width:100%;gap:.25rem;flex-direction:column;align-items:stretch}.nav-links a{padding:.35rem .2rem;white-space:normal}.js-enabled .nav-links{display:none}.js-enabled .nav-links.open{display:flex}.tool-status{width:100%;margin-left:0}.route-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.session{padding:1rem}.hero{padding:2.4rem 1rem}}
+@media(max-width:380px){.route-grid{grid-template-columns:1fr}}
+@media print{.reading-progress,.reading-tools,.route-panel,.mode-panel,.prep-panel,#go-top,.menu-toggle{display:none!important}.session{box-shadow:none;break-inside:auto}.nav-links{display:none!important}}
+
 </style>
 </head>
-<body>
-<nav>
- <span class="brand">Tejer la red</span>
+<body id="inicio">
+<a class="skip-link" href="#sobre">Saltar al contenido</a>
+<div class="reading-progress" aria-hidden="true"><span id="reading-progress-fill"></span></div>
+<nav aria-label="Secciones del recurso">
+ <a class="brand" href="#inicio">Tejer la red</a>
+ <button class="menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="site-nav-links">☰ Menú</button>
+ <div class="nav-links" id="site-nav-links">
  <a href="#problema">Problema</a><a href="#destinatarios">Destinatarios</a>
  <a href="#kahlo">Kahlo</a><a href="#secuencia">Secuencia</a>
- <a href="#accesibilidad">Accesibilidad</a><a href="#colaborar">Colaborar</a>
-<a href="#materiales">Materiales</a></nav>
+ <a href="#materiales">Materiales</a><a href="#accesibilidad">Accesibilidad</a><a href="#colaborar">Colaborar</a>
+ </div>
+</nav>
 
 <div class="hero">
- <div class="badge">Recurso Educativo Abierto · Versión 1.1 · CC BY-NC-SA 4.0</div>
+ <div class="badge">Recurso Educativo Abierto · Versión 1.2 · CC BY-NC-SA 4.0</div>
  <h1>Tejer la red</h1>
  <p class="sub">Guía para la inclusión digital de personas mayores institucionalizadas<br>a través de la obra de Frida Kahlo</p>
  <p class="meta">Favio Velázquez · América Palafox · ANEP-IFES · Educación Social y Tecnología · 2026</p>
+</div>
+<div class="reading-tools" aria-label="Herramientas de lectura">
+ <div class="tool-inner"><strong>Ajustes de lectura</strong>
+ <button type="button" data-scale="down" aria-label="Reducir el tamaño del texto">A−</button>
+ <button type="button" data-scale="up" aria-label="Aumentar el tamaño del texto">A+</button>
+ <button type="button" data-scale="reset">Tamaño original</button>
+ <button type="button" id="contrast-toggle" aria-pressed="false">Contraste alto</button>
+ <span class="tool-status" id="tool-status" role="status" aria-live="polite">Tamaño original y contraste normal.</span>
+ </div>
 </div>
 
 <div class="container">
@@ -108,6 +170,16 @@ body.printing .print-sheet.active p{margin:.5rem 0}}
  <p>Fue elaborada por Favio Velázquez y América Palafox para el primer parcial de Educación Social y Tecnología, ANEP-IFES. El texto, las fichas y los esquemas de elaboración propia se ofrecen bajo licencia abierta CC BY-NC-SA 4.0. Las obras enlazadas conservan los derechos indicados por cada institución.</p>
  <div class="alerta"><p><strong>Alcance del proyecto.</strong> Es un diseño socioeducativo para profesionales, no un informe de una intervención realizada. Sus autores no implementaron la secuencia con residentes en esta Unidad Curricular. Antes de usarla, cada profesional deberá adaptarla al grupo, acordarla con su institución y supervisar la experiencia.</p></div>
  <p><strong>Cómo comenzar:</strong> consulte el perfil de referencia, revise las fichas de las obras, complete la ficha de relevamiento de su dispositivo y adapte los encuentros a los recursos y decisiones de quienes participan.</p>
+<div class="prep-panel" id="preparacion">
+ <h3>Preparación de quien facilita</h3>
+ <p>Esta lista sirve para organizar un uso futuro del recurso. Marcarla no significa que los encuentros se hayan realizado; no guarda información del grupo.</p>
+ <div class="prep-checklist" id="prep-checklist">
+ <label><input type="checkbox"><span>Revisé los cinco enlaces culturales y su disponibilidad en el dispositivo.</span></label>
+ <label><input type="checkbox"><span>Descargué el cuadernillo y preparé las fichas necesarias.</span></label>
+ <label><input type="checkbox"><span>Acordé apoyos, turnos, privacidad y supervisión con la institución.</span></label>
+ </div>
+ <p class="prep-status" id="prep-status" role="status" aria-live="polite">La lista se reinicia al volver a abrir la página.</p>
+</div>
 </section><section id="problema">
  <h2>El problema</h2>
  <p>El acceso en línea a colecciones culturales no equivale a poder explorarlas. En Uruguay persisten diferencias por edad y trayectoria educativa en dispositivos, habilidades y formas de participación digital. La EUTIC 2024 informa que el 69 % de las personas de 65 años y más usa internet, frente a niveles cercanos al 99 % en edades menores.</p>
@@ -156,6 +228,26 @@ body.printing .print-sheet.active p{margin:.5rem 0}}
  <p>Con conectividad limitada conviene alternar duplas y tríadas y repartir turnos de manejo. El cuadernillo reúne las siete fichas propias para descarga anticipada; sostiene consignas y conversación sin conexión, pero no incorpora imágenes de pinturas ajenas. La persona educadora comprueba antes los enlaces culturales. Si no hay datos suficientes, reprograma la observación visual de las obras y la práctica de búsqueda digital: una ficha impresa no demuestra esa habilidad.</p>
  <p><strong>Qué se observaría si se implementa:</strong> en el plano digital y cultural, elecciones sobre la fuente, pasos de navegación y distinción entre datos e interpretaciones; en el plano del encuentro, turnos de manejo o dirección del dispositivo, preguntas dirigidas a otras personas y decisiones compartidas. Son señales de observación orientativas, no resultados obtenidos por los autores.</p>
  
+<div class="route-panel" id="recorrido">
+ <h3>Elegí un encuentro</h3>
+ <p>Podés recorrerlos en orden o abrir uno directamente. El número señalado indica la parte de la página que estás leyendo, no un taller realizado.</p>
+ <div class="route-grid" role="navigation" aria-label="Acceso directo a los cinco encuentros">
+  <a href="#encuentro-1"><span class="step">1</span><span>Trayectorias</span></a>
+  <a href="#encuentro-2"><span class="step">2</span><span>Memoria y navegación</span></a>
+  <a href="#encuentro-3"><span class="step">3</span><span>Lectura crítica</span></a>
+  <a href="#encuentro-4"><span class="step">4</span><span>Identidad y privacidad</span></a>
+  <a href="#encuentro-5"><span class="step">5</span><span>Creación colectiva</span></a>
+ </div>
+ <p class="route-status" id="route-status">Acceso directo a los cinco encuentros.</p>
+</div>
+<fieldset class="mode-panel" id="consulta-conexion">
+ <legend>¿Con qué conectividad prepararías el encuentro?</legend>
+ <div class="mode-options">
+ <button type="button" data-mode="datos" aria-pressed="true">Con datos móviles</button>
+ <button type="button" data-mode="sin-datos" aria-pressed="false">Sin conexión en el momento</button>
+ </div>
+ <p class="mode-response" id="mode-response" role="status" aria-live="polite">Con datos móviles: comprobar previamente las fuentes, compartir el teléfono por turnos y registrar qué decisiones dirige cada persona.</p>
+</fieldset>
     <article class="session" id="encuentro-1">
       <h3>Encuentro 1: Trayectorias tecnológicas y primera obra</h3>
       <p><strong>Propósito:</strong> Reconocer saberes tecnológicos previos y decidir juntos una primera pregunta de exploración.</p>
@@ -237,13 +329,15 @@ body.printing .print-sheet.active p{margin:.5rem 0}}
  <p><strong>Canal de aportes:</strong> <a href="https://github.com/Profesor2023/profesor2023.github.io/issues">proponer una mejora en GitHub Issues</a>. Para comentar se requiere una cuenta GitHub; la lectura del REA no exige registro. No se suben datos ni producciones identificables de residentes a un canal público.</p>
  <h3>Historial de versiones</h3>
  <p><strong>Versión 1.0 — publicada el 17 de setiembre de 2026.</strong> Diseño de Favio Velázquez y América Palafox para Educación Social y Tecnología, ANEP-IFES.</p>
- <p><strong>Versión 1.1 — revisada el 18 de setiembre de 2026.</strong> Se ofrece la descarga directa del cuadernillo único y se hacen explícitas las señales de aprendizaje digital y de encuentro social. Segunda entrega y presentación previstas para el 22 de octubre. Las mejoras posteriores se documentarán en el repositorio.</p>
+ <p><strong>Versión 1.1 — revisada el 18 de setiembre de 2026.</strong> Se incorporó la descarga directa del cuadernillo y se explicitaron las señales de aprendizaje digital y encuentro social.</p>
+ <p><strong>Versión 1.2 — revisada el 18 de setiembre de 2026.</strong> Se añadieron herramientas de lectura, navegación móvil, acceso rápido a los encuentros, una lista local de preparación y orientaciones según la conectividad. No se recopilan datos de visitantes ni se registran talleres. Segunda entrega y presentación previstas para el 22 de octubre. Las mejoras posteriores se documentarán en el repositorio.</p>
 </section><section id="licencia">
  <h2>Licencia y atribución</h2>
  <div class="lic">
   <p><strong>CC BY-NC-SA 4.0, Atribución-NoComercial-CompartirIgual.</strong> Se permite copiar y adaptar los textos, fichas y esquemas originales de este REA con atribución, sin uso comercial y con la misma licencia para las adaptaciones.</p>
   <p>Esta licencia no se extiende a las pinturas, fotografías de archivo ni a los contenidos de los museos enlazados. Consulte sus condiciones antes de reutilizarlos.</p>
-  <p>Velázquez, F. y Palafox, A. (2026). <em>Tejer la red: recurso educativo abierto para la inclusión digital de personas mayores institucionalizadas.</em> ANEP-IFES. CC BY-NC-SA 4.0.</p>
+  <p id="cita-rea">Velázquez, F. y Palafox, A. (2026). <em>Tejer la red: recurso educativo abierto para la inclusión digital de personas mayores institucionalizadas.</em> ANEP-IFES. CC BY-NC-SA 4.0.</p>
+  <p><button type="button" class="print-action" id="copy-citation">Copiar la cita del REA</button> <span id="citation-status" role="status" aria-live="polite"></span></p>
   <p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Consultar la licencia completa (abre otra pestaña)</a></p>
  </div>
 </section><section id="referencias" class="refs">
@@ -265,8 +359,9 @@ body.printing .print-sheet.active p{margin:.5rem 0}}
 
 <article id="ficha-1" class="print-sheet"><h1>Tejer la red · Ficha del encuentro 1</h1><p>Material para adaptar en una implementación futura. No registrar datos personales sensibles.</p><h2>Trayectorias tecnológicas y primera obra</h2><p><strong>Fuente:</strong> https://artsandculture.google.com/asset/self-portrait-wearing-a-velvet-dress/9QHUrLhK3UEXqw?hl=es</p><p><strong>Pregunta inicial:</strong> ¿Qué te gustaría observar o saber de esta obra?</p><p>Lo que vemos en la ficha institucional:</p><div class="line"></div><div class="line"></div><p>Lo que cada persona elige preguntar, interpretar o conservar en privado:</p><div class="line"></div><div class="line"></div><p>Un paso de navegación realizado o decidido por el grupo y apoyo recibido:</p><div class="line"></div><div class="line"></div><p>Acuerdo sobre dónde quedará la producción, si la hubo:</p><div class="line"></div><p style="font-size:10pt;margin-top:1.5rem">Velázquez y Palafox · ANEP-IFES · CC BY-NC-SA 4.0 · 2026</p></article><article id="ficha-2" class="print-sheet"><h1>Tejer la red · Ficha del encuentro 2</h1><p>Material para adaptar en una implementación futura. No registrar datos personales sensibles.</p><h2>Navegar en pantalla compartida</h2><p><strong>Fuente:</strong> https://artsandculture.google.com/asset/mi-familia-inconcluso/pwHWYVOnhtEenQ?hl=es</p><p><strong>Pregunta inicial:</strong> ¿Qué te gustaría observar o saber de esta obra?</p><p>Lo que vemos en la ficha institucional:</p><div class="line"></div><div class="line"></div><p>Lo que cada persona elige preguntar, interpretar o conservar en privado:</p><div class="line"></div><div class="line"></div><p>Un paso de navegación realizado o decidido por el grupo y apoyo recibido:</p><div class="line"></div><div class="line"></div><p>Acuerdo sobre dónde quedará la producción, si la hubo:</p><div class="line"></div><p style="font-size:10pt;margin-top:1.5rem">Velázquez y Palafox · ANEP-IFES · CC BY-NC-SA 4.0 · 2026</p></article><article id="ficha-3" class="print-sheet"><h1>Tejer la red · Ficha del encuentro 3</h1><p>Material para adaptar en una implementación futura. No registrar datos personales sensibles.</p><h2>Buscar, elegir e interpretar</h2><p><strong>Fuente:</strong> https://www.hrc.utexas.edu/frida-kahlo-self-portrait/</p><p><strong>Pregunta inicial:</strong> ¿Qué te gustaría observar o saber de esta obra?</p><p>Lo que vemos en la ficha institucional:</p><div class="line"></div><div class="line"></div><p>Lo que cada persona elige preguntar, interpretar o conservar en privado:</p><div class="line"></div><div class="line"></div><p>Un paso de navegación realizado o decidido por el grupo y apoyo recibido:</p><div class="line"></div><div class="line"></div><p>Acuerdo sobre dónde quedará la producción, si la hubo:</p><div class="line"></div><p style="font-size:10pt;margin-top:1.5rem">Velázquez y Palafox · ANEP-IFES · CC BY-NC-SA 4.0 · 2026</p></article><article id="ficha-4" class="print-sheet"><h1>Tejer la red · Ficha del encuentro 4</h1><p>Material para adaptar en una implementación futura. No registrar datos personales sensibles.</p><h2>Autorretrato, documentos e identidad digital</h2><p><strong>Fuente:</strong> https://artsandculture.google.com/asset/fotograf%C3%ADa-de-frida-kahlo-con-su-pintura-autorretrato-como-tehuana-unidentified/gAGR-5t_1Z_wXw?hl=es-419</p><p><strong>Pregunta inicial:</strong> ¿Qué te gustaría observar o saber de esta obra?</p><p>Lo que vemos en la ficha institucional:</p><div class="line"></div><div class="line"></div><p>Lo que cada persona elige preguntar, interpretar o conservar en privado:</p><div class="line"></div><div class="line"></div><p>Un paso de navegación realizado o decidido por el grupo y apoyo recibido:</p><div class="line"></div><div class="line"></div><p>Acuerdo sobre dónde quedará la producción, si la hubo:</p><div class="line"></div><p style="font-size:10pt;margin-top:1.5rem">Velázquez y Palafox · ANEP-IFES · CC BY-NC-SA 4.0 · 2026</p></article><article id="ficha-5" class="print-sheet"><h1>Tejer la red · Ficha del encuentro 5</h1><p>Material para adaptar en una implementación futura. No registrar datos personales sensibles.</p><h2>Producción colectiva y decisión de circulación</h2><p><strong>Fuente:</strong> https://artsandculture.google.com/asset/viva-la-vida/bAGbsL-eW4XUXg?hl=es</p><p><strong>Pregunta inicial:</strong> ¿Qué te gustaría observar o saber de esta obra?</p><p>Lo que vemos en la ficha institucional:</p><div class="line"></div><div class="line"></div><p>Lo que cada persona elige preguntar, interpretar o conservar en privado:</p><div class="line"></div><div class="line"></div><p>Un paso de navegación realizado o decidido por el grupo y apoyo recibido:</p><div class="line"></div><div class="line"></div><p>Acuerdo sobre dónde quedará la producción, si la hubo:</p><div class="line"></div><p style="font-size:10pt;margin-top:1.5rem">Velázquez y Palafox · ANEP-IFES · CC BY-NC-SA 4.0 · 2026</p></article><article id="perfil" class="print-sheet"><h1>Tejer la red · Ficha de relevamiento del dispositivo</h1><p>Material para adaptar en una implementación futura. No registrar datos personales sensibles.</p><p>Tipo de establecimiento y fecha del relevamiento (sin nombres de residentes):</p><div class="line"></div><p>Intereses expresados por el grupo y objetivos institucionales pertinentes:</p><div class="line"></div><div class="line"></div><p>Dispositivos y conectividad disponibles; cantidad para organizar turnos:</p><div class="line"></div><div class="line"></div><p>Apoyos visuales, auditivos, de motricidad o lingüísticos que el grupo acuerde:</p><div class="line"></div><div class="line"></div><p>Horario posible, coordinación previa y referente institucional:</p><div class="line"></div><p>Adaptaciones previstas y forma de registrar decisiones sin identificar personas:</p><div class="line"></div><div class="line"></div><p style="font-size:10pt;margin-top:1.5rem">Velázquez y Palafox · ANEP-IFES · CC BY-NC-SA 4.0 · 2026</p></article><article id="devolucion" class="print-sheet"><h1>Tejer la red · Ficha de devolución de una implementación</h1><p>Material para adaptar en una implementación futura. No registrar datos personales sensibles.</p><p>Institución o tipo de dispositivo (usar denominación genérica si corresponde):</p><div class="line"></div><p>Fecha de los encuentros y profesional que desea figurar como contribuyente:</p><div class="line"></div><p>Qué se adaptó y por qué:</p><div class="line"></div><div class="line"></div><p>Qué elecciones o aprendizajes se observaron; qué apoyos fueron necesarios:</p><div class="line"></div><div class="line"></div><p>Qué no funcionó y qué cambiaría:</p><div class="line"></div><div class="line"></div><p>Materiales propuestos para otra versión, sin datos identificables:</p><div class="line"></div><div class="line"></div><p style="font-size:10pt;margin-top:1.5rem">Velázquez y Palafox · ANEP-IFES · CC BY-NC-SA 4.0 · 2026</p></article><footer>
  <p><strong>Tejer la red</strong> · Velázquez, F. y Palafox, A. (2026) · ANEP–IFES · Carrera Educador Social</p>
- <p style="margin-top:.5rem">Versión 1.1 · Edición 2026 · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener">Licencia CC BY-NC-SA 4.0</a></p>
+ <p style="margin-top:.5rem">Versión 1.2 · Edición 2026 · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener">Licencia CC BY-NC-SA 4.0</a></p>
 </footer>
+<a id="go-top" href="#inicio" aria-label="Volver al comienzo" title="Volver al comienzo">↑</a>
 <script>
 document.querySelectorAll('[data-sheet]').forEach(function(button){
  button.addEventListener('click',function(){
@@ -279,5 +374,85 @@ document.querySelectorAll('[data-sheet]').forEach(function(button){
  });
 });
 window.addEventListener('afterprint',function(){document.body.classList.remove('printing');document.querySelectorAll('.print-sheet').forEach(function(s){s.classList.remove('active')});});
+
+(function(){
+ 'use strict';
+ var root=document.documentElement;
+ root.classList.add('js-enabled');
+ var menu=document.getElementById('menu-toggle');
+ var navLinks=document.getElementById('site-nav-links');
+ function closeMenu(){menu.setAttribute('aria-expanded','false');navLinks.classList.remove('open');}
+ menu.addEventListener('click',function(){
+  var open=menu.getAttribute('aria-expanded')!=='true';
+  menu.setAttribute('aria-expanded',String(open));navLinks.classList.toggle('open',open);
+ });
+ navLinks.querySelectorAll('a').forEach(function(link){link.addEventListener('click',closeMenu);});
+ document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){closeMenu();menu.focus();}});
+
+ var scale=1,contrast=document.getElementById('contrast-toggle');
+ var toolStatus=document.getElementById('tool-status');
+ function updateTools(){
+  root.style.fontSize=Math.round(scale*100)+'%';
+  toolStatus.textContent='Tamaño del texto: '+Math.round(scale*100)+' %. Contraste '+(root.classList.contains('high-contrast')?'alto.':'normal.');
+ }
+ document.querySelectorAll('[data-scale]').forEach(function(button){
+  button.addEventListener('click',function(){
+   var action=button.getAttribute('data-scale');
+   scale=action==='reset'?1:Math.min(1.375,Math.max(.875,scale+(action==='up'?.125:-.125)));
+   updateTools();
+  });
+ });
+ contrast.addEventListener('click',function(){
+  var active=root.classList.toggle('high-contrast');
+  contrast.setAttribute('aria-pressed',String(active));updateTools();
+ });
+
+ var checks=Array.prototype.slice.call(document.querySelectorAll('#prep-checklist input[type="checkbox"]'));
+ var prepStatus=document.getElementById('prep-status');
+ function updatePrep(){
+  var count=checks.filter(function(c){return c.checked;}).length;
+  prepStatus.textContent=count+' de '+checks.length+' preparativos marcados. Esta lista se reinicia al recargar y no registra datos personales.';
+ }
+ checks.forEach(function(c){c.addEventListener('change',updatePrep);});updatePrep();
+
+ var messages={
+  datos:'Con datos móviles: comprobar previamente las fuentes, compartir el teléfono por turnos y registrar qué decisiones dirige cada persona.',
+  'sin-datos':'Sin conexión: las fichas descargadas antes permiten conversar y registrar acuerdos. Como el cuadernillo no reproduce las obras, la observación visual y la búsqueda digital se reprograman hasta disponer de acceso o material autorizado.'
+ };
+ var modeButtons=Array.prototype.slice.call(document.querySelectorAll('[data-mode]'));
+ modeButtons.forEach(function(button){button.addEventListener('click',function(){
+  var mode=button.getAttribute('data-mode');
+  modeButtons.forEach(function(b){b.setAttribute('aria-pressed',String(b===button));});
+  document.getElementById('mode-response').textContent=messages[mode];
+ });});
+
+ var sessions=Array.prototype.slice.call(document.querySelectorAll('.session[id^="encuentro-"]'));
+ var shortcuts=Array.prototype.slice.call(document.querySelectorAll('.route-grid a'));
+ var routeStatus=document.getElementById('route-status');
+ var goTop=document.getElementById('go-top');
+ var progress=document.getElementById('reading-progress-fill');
+ var scheduled=false;
+ function updateScroll(){
+  var max=document.documentElement.scrollHeight-window.innerHeight;
+  progress.style.width=(max>0?Math.min(100,Math.max(0,window.scrollY/max*100)):100)+'%';
+  goTop.classList.toggle('is-visible',window.scrollY>500);
+  var cursor=window.innerHeight*.42,active=null;
+  sessions.forEach(function(s){var box=s.getBoundingClientRect();if(box.top<=cursor&&box.bottom>=cursor)active=s.id;});
+  shortcuts.forEach(function(a){if(a.getAttribute('href')==='#'+active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});
+  var message=active?'Estás leyendo el encuentro '+active.split('-')[1]+' de 5.':'Acceso directo a los cinco encuentros.';
+  if(routeStatus.textContent!==message)routeStatus.textContent=message;
+  scheduled=false;
+ }
+ function requestUpdate(){if(!scheduled){scheduled=true;window.requestAnimationFrame(updateScroll);}}
+ window.addEventListener('scroll',requestUpdate,{passive:true});
+ window.addEventListener('resize',requestUpdate);updateScroll();
+
+ document.getElementById('copy-citation').addEventListener('click',function(){
+  var status=document.getElementById('citation-status');
+  var cite=document.getElementById('cita-rea').textContent.trim();
+  if(!navigator.clipboard||!navigator.clipboard.writeText){status.textContent='Seleccioná y copiá la cita que figura arriba.';return;}
+  navigator.clipboard.writeText(cite).then(function(){status.textContent='Cita copiada.';},function(){status.textContent='Seleccioná y copiá la cita que figura arriba.';});
+ });
+})();
 </script></body>
 </html>

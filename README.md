@@ -11,7 +11,9 @@ Aportes profesionales: https://github.com/Profesor2023/profesor2023.github.io/is
 - `index.html`: página del REA con cinco encuentros y fichas individuales imprimibles.
 - `Materiales_uso_sin_conexion.pdf`: cuadernillo único descargable desde la página, con cinco fichas de encuentro, una de relevamiento y una de devolución (nueve páginas contando las instrucciones).
 
-La versión 1.0 se publicó el 17 de setiembre de 2026. La versión 1.1, revisada el 18 de setiembre, añadió la descarga directa del cuadernillo y explicitó señales observables de aprendizaje y de encuentro para una aplicación futura. La segunda presentación está prevista para el 22 de octubre.
+La versión 1.0 se publicó el 17 de setiembre de 2026. La versión 1.1, revisada el 18 de setiembre, añadió la descarga directa del cuadernillo y explicitó señales observables de aprendizaje y de encuentro para una aplicación futura. La versión 1.2 del mismo día añadió un menú adaptable a teléfonos, herramientas de lectura, acceso directo a los encuentros, una lista local de preparación y orientaciones para situaciones con o sin conexión. La segunda presentación está prevista para el 22 de octubre.
+
+Las interacciones usan únicamente HTML, CSS y JavaScript en la propia página: no necesitan librerías externas, no envían formularios ni registran información de residentes. La lista de preparación se borra al recargar. Si JavaScript no está disponible, la secuencia, las fuentes culturales y la descarga del PDF siguen accesibles.
 
 El cuadernillo contiene únicamente materiales de autoría del equipo; no reproduce pinturas ni fotografías ajenas. Sin conexión permite trabajar consignas y registrar decisiones, mientras que la observación visual de las obras y la navegación digital requieren acceder a las fuentes culturales o contar con materiales autorizados. El REA **no documenta encuentros realizados con residentes**.
 
