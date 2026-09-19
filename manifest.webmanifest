@@ -1,0 +1,23 @@
+{
+  "name": "Educación social y tecnologías · Favio Velázquez",
+  "short_name": "Tejer la red",
+  "description": "Recursos educativos abiertos sobre educación social, inclusión digital y tecnologías. Incluye el REA Tejer la red.",
+  "lang": "es-UY",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#FBFAF7",
+  "theme_color": "#00537F",
+  "categories": ["education", "books"],
+  "icons": [
+    {"src": "icono-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icono-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "icono-mascara-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ],
+  "shortcuts": [
+    {"name": "Tejer la red", "url": "tejer-la-red/"},
+    {"name": "Recursos educativos", "url": "recursos/"}
+  ]
+}
