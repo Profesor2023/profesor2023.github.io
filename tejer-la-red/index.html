@@ -7,7 +7,9 @@
 <meta name="description" content="Recurso educativo abierto para la inclusión digital de personas mayores institucionalizadas a través de la obra de Frida Kahlo. ANEP-IFES, Educación Social.">
 <link rel="manifest" href="../manifest.webmanifest">
 <meta name="theme-color" content="#00537F">
-<link rel="icon" href="../icono-192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="../favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../favicon-64.png" sizes="64x64">
+<link rel="shortcut icon" href="../favicon.ico">
 <link rel="apple-touch-icon" href="../icono-192.png">
 <style>
 :root{--azul:#00537F;--cel:#005B8F;--rojo:#B34D00;--oro:#8A6500;--verde:#006B4F;
@@ -237,6 +239,20 @@ html.high-contrast .plain-note{border-left-color:#14411f;background:#fff}
 .chat-suggestions.followup button{border-style:dashed}
 @media print{.notes-panel,.resume-bar,.anchor-copy{display:none!important}}
 
+/* Identidad visual: emblema transparente sobre la cabecera azul. */
+.hero{padding:2.6rem 2rem;position:relative;overflow:hidden;isolation:isolate;text-align:left}
+.hero-inner{width:min(1180px,100%);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) clamp(245px,29vw,380px);align-items:center;gap:clamp(1.5rem,4vw,4rem)}
+.hero-copy{position:relative;z-index:2}
+.hero .badge{margin-bottom:1rem;text-align:center}
+.hero-mark{position:relative;z-index:1;width:100%;justify-self:end;transform-style:preserve-3d}
+.hero-mark::after{content:"";position:absolute;z-index:-1;left:17%;right:8%;bottom:3%;height:14%;border-radius:50%;background:rgba(0,20,36,.48);filter:blur(15px);transform:perspective(520px) rotateX(67deg) translateY(13px)}
+.hero-emblem{display:block;width:100%;height:auto;filter:drop-shadow(0 24px 14px rgba(0,20,36,.5)) drop-shadow(0 4px 2px rgba(255,255,255,.16));transform:perspective(850px) rotateY(-9deg) rotateZ(1.4deg);transform-origin:50% 60%;animation:rea-emblem-float 5.5s ease-in-out infinite;transition:transform .35s ease,filter .35s ease}
+.hero-mark:hover .hero-emblem{filter:drop-shadow(0 29px 16px rgba(0,20,36,.58)) drop-shadow(0 4px 2px rgba(255,255,255,.2));transform:perspective(850px) rotateY(-3deg) rotateZ(-.6deg) translateY(-6px) scale(1.015)}
+@keyframes rea-emblem-float{50%{transform:perspective(850px) rotateY(-5deg) rotateZ(-.8deg) translateY(-7px)}}
+@media(max-width:700px){.hero{padding:2.25rem 1rem 1.2rem;text-align:center}.hero-inner{grid-template-columns:1fr;gap:.55rem}.hero .sub br{display:none}.hero-mark{width:min(72vw,278px);justify-self:center;margin-top:.25rem}.hero-mark::after{bottom:1%}}
+@media(prefers-reduced-motion:reduce){.hero-emblem{animation:none;transition:none}.hero-mark:hover .hero-emblem{transform:perspective(850px) rotateY(-9deg) rotateZ(1.4deg)}}
+@media print{.hero-mark{display:none!important}.hero-inner{display:block}.hero{text-align:center}}
+
 </style>
 </head>
 <body id="inicio">
@@ -254,10 +270,17 @@ html.high-contrast .plain-note{border-left-color:#14411f;background:#fff}
 </nav>
 
 <div class="hero">
- <div class="badge">Recurso Educativo Abierto · Versión 1.6 · CC BY-NC-SA 4.0</div>
- <h1>Tejer la red</h1>
- <p class="sub">Guía para la inclusión digital de personas mayores institucionalizadas<br>a través de la obra de Frida Kahlo</p>
- <p class="meta">Favio Velázquez · América Palafox · ANEP-IFES · Educación Social y Tecnología · 2026</p>
+ <div class="hero-inner">
+  <div class="hero-copy">
+   <div class="badge">Recurso Educativo Abierto · Versión 1.6 · CC BY-NC-SA 4.0</div>
+   <h1>Tejer la red</h1>
+   <p class="sub">Guía para la inclusión digital de personas mayores institucionalizadas<br>a través de la obra de Frida Kahlo</p>
+   <p class="meta">Favio Velázquez · América Palafox · ANEP-IFES · Educación Social y Tecnología · 2026</p>
+  </div>
+  <div class="hero-mark" aria-hidden="true">
+   <img class="hero-emblem" src="../marca-tejer-la-red.png" width="512" height="512" alt="" decoding="async">
+  </div>
+ </div>
 </div>
 <div class="reading-tools" aria-label="Herramientas de lectura">
  <div class="tool-inner"><strong>Ajustes de lectura</strong>
