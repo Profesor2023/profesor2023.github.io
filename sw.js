@@ -1,6 +1,6 @@
 /* Tejer la red - service worker
    Guarda una copia del sitio para usarlo sin conexion. */
-var CACHE='tejer-la-red-v1-6-identidad-3';
+var CACHE='tejer-la-red-v1-6-identidad-4';
 var BASICOS=[
  './','./index.html','./estilo.css','./manifest.webmanifest',
  './tejer-la-red/','./tejer-la-red/index.html',
