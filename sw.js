@@ -1,13 +1,13 @@
 /* Tejer la red - service worker
    Guarda una copia del sitio para usarlo sin conexion. */
-var CACHE='tejer-la-red-v1-6-pdf-final-icono';
+var CACHE='tejer-la-red-v1-6';
 var BASICOS=[
  './','./index.html','./estilo.css','./manifest.webmanifest',
  './tejer-la-red/','./tejer-la-red/index.html',
  './recursos/','./recursos/index.html',
  './temas/','./temas/index.html',
  './icono-192.png','./icono-512.png',
- './tejer-la-red/Velazquez_Palafox_Primer_Parcial_Final.pdf'
+ './tejer-la-red/Materiales_uso_sin_conexion.pdf'
 ];
 self.addEventListener('install',function(ev){
  ev.waitUntil(caches.open(CACHE).then(function(c){
