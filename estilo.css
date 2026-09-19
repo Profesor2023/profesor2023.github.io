@@ -2,6 +2,31 @@
 --gris:#555;--gc:#EFF2F5;--ng:#1A1A1A;--bl:#FBFAF7;--navtx:#D6E9F8;}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,Helvetica,sans-serif;color:var(--ng);background:var(--bl);font-size:18px;line-height:1.75}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.site-intro{display:none;position:fixed;inset:0;z-index:1000;background:var(--azul);color:#fff;align-items:center;justify-content:center;flex-direction:column;padding:1rem;overflow:hidden}
+.intro-pending .site-intro{display:flex}
+.intro-active{overflow:hidden}
+.site-intro.is-leaving{animation:intro-fade .76s ease forwards;pointer-events:none}
+.intro-stage{position:relative;width:min(72vmin,650px);aspect-ratio:1;isolation:isolate;filter:drop-shadow(0 28px 20px rgba(0,22,37,.4))}
+.intro-base,.intro-rotor{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.intro-base{z-index:1}
+.intro-rotor-disc{position:absolute;inset:0;z-index:2;background:radial-gradient(circle at 36% 32.5%,var(--azul) 0 25%,transparent 25.5%)}
+.intro-rotor{z-index:3;clip-path:circle(25.3% at 36% 32.5%);transform-origin:36% 32.5%;animation:intro-spin 6s linear infinite}
+.intro-bird-veil{position:absolute;inset:0;z-index:4;background:var(--azul);clip-path:polygon(61% 2%,100% 2%,100% 68%,69% 69%,64% 55%,72% 39%,60% 29%)}
+.intro-bird{position:absolute;z-index:5;height:auto;opacity:0;filter:drop-shadow(0 7px 5px rgba(0,22,37,.38));animation:intro-bird-emerge 1.2s cubic-bezier(.2,.75,.24,1) forwards}
+.intro-bird.b1{left:64%;top:64%;width:4.5%;fill:#73527E;animation-delay:.35s}
+.intro-bird.b2{left:68%;top:57%;width:6%;fill:#D39A0A;animation-delay:.78s}
+.intro-bird.b3{left:73%;top:48%;width:8%;fill:#2A8077;animation-delay:1.21s}
+.intro-bird.b4{left:77%;top:37%;width:10.5%;fill:#D36F4A;animation-delay:1.64s}
+.intro-bird.b5{left:78%;top:23%;width:14%;fill:#E59028;animation-delay:2.07s}
+.intro-bird.b6{left:75%;top:6%;width:19%;fill:#D85A8B;animation-delay:2.5s}
+.intro-name{position:relative;z-index:7;margin:.25rem 0 .75rem;color:#fff;font-size:clamp(1.1rem,2.3vw,1.55rem);font-weight:700;letter-spacing:.02em;text-align:center;animation:intro-name 1s ease 2.8s both}
+#intro-skip{position:relative;z-index:7;border:2px solid #fff;border-radius:999px;background:rgba(0,31,52,.35);color:#fff;font:inherit;font-weight:700;min-height:46px;padding:.45rem 1.2rem;cursor:pointer}
+#intro-skip:hover,#intro-skip:focus-visible{background:#fff;color:var(--azul);outline:3px solid #D39A0A;outline-offset:3px}
+@keyframes intro-spin{to{transform:rotate(360deg)}}
+@keyframes intro-bird-emerge{0%{opacity:0;transform:translate(-18px,18px) scale(.28)}55%{opacity:1}100%{opacity:1;transform:translate(0,0) scale(1)}}
+@keyframes intro-name{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes intro-fade{to{opacity:0;visibility:hidden}}
 .skip-link{position:absolute;left:-999px;background:#fff;color:var(--azul);padding:.6rem 1rem;z-index:200}
 .skip-link:focus{left:.5rem;top:.5rem}
 a{color:#0A4A72}
@@ -38,5 +63,6 @@ ul.lista li{margin-bottom:.45rem}
 footer{background:var(--azul);color:#fff;padding:1.6rem;text-align:center;font-size:.9rem}
 footer a{color:var(--navtx)}
 @media(max-width:720px){.hero{padding:2.2rem 1rem 1.25rem}.hero-inner{grid-template-columns:1fr;gap:.55rem}.hero h1{font-size:1.9rem}.hero-mark{width:min(74vw,285px);margin-top:.2rem}.hero-mark::after{bottom:1%}main{padding:1.5rem 1rem 2.5rem}}
-@media(prefers-reduced-motion:reduce){.hero-emblem{animation:none}.hero-mark:hover .hero-emblem{transform:perspective(800px) rotateY(-8deg) rotateZ(1.2deg)}}
+@media(max-width:720px){.intro-stage{width:min(91vw,520px)}.intro-name{margin-top:.1rem}#intro-skip{font-size:.95rem}}
+@media(prefers-reduced-motion:reduce){.intro-rotor-disc,.intro-rotor,.intro-bird-veil,.intro-bird{display:none}.intro-name{animation:none}.site-intro.is-leaving{animation-duration:.2s}.hero-emblem{animation:none}.hero-mark:hover .hero-emblem{transform:perspective(800px) rotateY(-8deg) rotateZ(1.2deg)}}
 @media(prefers-contrast:more){body{background:#fff}}

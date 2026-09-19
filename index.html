@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Educación social y tecnologías · Favio Velázquez</title>
 <meta name="description" content="Recursos educativos abiertos sobre educación social, inclusión digital y tecnologías, ANEP-IFES.">
+<script>
+(function(){try{if(!sessionStorage.getItem('portal:intro:v1'))document.documentElement.classList.add('intro-pending');}catch(e){document.documentElement.classList.add('intro-pending');}})();
+</script>
 <link rel="stylesheet" href="estilo.css">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#00537F">
@@ -14,6 +17,23 @@
 <link rel="apple-touch-icon" href="icono-192.png">
 </head>
 <body>
+<div class="site-intro" id="site-intro" role="dialog" aria-modal="true" aria-labelledby="intro-title">
+ <h1 class="sr-only" id="intro-title">Educación social y tecnologías</h1>
+ <div class="intro-stage" aria-hidden="true">
+  <img class="intro-base" src="marca-tejer-la-red.png" width="512" height="512" alt="">
+  <span class="intro-rotor-disc"></span>
+  <img class="intro-rotor" src="marca-tejer-la-red.png" width="512" height="512" alt="">
+  <span class="intro-bird-veil"></span>
+  <svg class="intro-bird b1" viewBox="0 0 64 40" aria-hidden="true"><path d="M2 25C13 10 24 11 32 21C40 11 51 10 62 25C49 19 41 21 32 31C23 21 15 19 2 25Z"/></svg>
+  <svg class="intro-bird b2" viewBox="0 0 64 40" aria-hidden="true"><path d="M2 25C13 10 24 11 32 21C40 11 51 10 62 25C49 19 41 21 32 31C23 21 15 19 2 25Z"/></svg>
+  <svg class="intro-bird b3" viewBox="0 0 64 40" aria-hidden="true"><path d="M2 25C13 10 24 11 32 21C40 11 51 10 62 25C49 19 41 21 32 31C23 21 15 19 2 25Z"/></svg>
+  <svg class="intro-bird b4" viewBox="0 0 64 40" aria-hidden="true"><path d="M2 25C13 10 24 11 32 21C40 11 51 10 62 25C49 19 41 21 32 31C23 21 15 19 2 25Z"/></svg>
+  <svg class="intro-bird b5" viewBox="0 0 64 40" aria-hidden="true"><path d="M2 25C13 10 24 11 32 21C40 11 51 10 62 25C49 19 41 21 32 31C23 21 15 19 2 25Z"/></svg>
+  <svg class="intro-bird b6" viewBox="0 0 64 40" aria-hidden="true"><path d="M2 25C13 10 24 11 32 21C40 11 51 10 62 25C49 19 41 21 32 31C23 21 15 19 2 25Z"/></svg>
+ </div>
+ <p class="intro-name">Educación social y tecnologías</p>
+ <button type="button" id="intro-skip">Entrar al sitio</button>
+</div>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 <nav aria-label="Secciones del sitio">
  <a class="brand" href="./">Favio Velázquez · Educación Social</a>
@@ -67,6 +87,34 @@
 </footer>
 <script>
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js',{scope:'./'}).catch(function(){});});}
+</script>
+<script>
+(function(){
+ var root=document.documentElement;
+ var intro=document.getElementById('site-intro');
+ if(!root.classList.contains('intro-pending'))return;
+ var boton=document.getElementById('intro-skip');
+ var fondo=Array.prototype.slice.call(document.body.children).filter(function(el){return el!==intro&&el.tagName!=='SCRIPT';});
+ var terminado=false;
+ root.classList.add('intro-active');
+ fondo.forEach(function(el){el.inert=true;});
+ function cerrar(){
+  if(terminado)return;terminado=true;
+  intro.classList.add('is-leaving');
+  try{sessionStorage.setItem('portal:intro:v1','vista');}catch(e){}
+  window.setTimeout(function(){
+   root.classList.remove('intro-pending','intro-active');
+   intro.setAttribute('aria-hidden','true');
+   fondo.forEach(function(el){el.inert=false;});
+   var destino=document.getElementById('contenido');
+   destino.setAttribute('tabindex','-1');destino.focus({preventScroll:true});
+  },760);
+ }
+ boton.addEventListener('click',cerrar);
+ document.addEventListener('keydown',function(ev){if(ev.key==='Escape')cerrar();});
+ window.setTimeout(cerrar,window.matchMedia('(prefers-reduced-motion: reduce)').matches?1200:6200);
+ window.setTimeout(function(){if(!terminado)boton.focus();},120);
+})();
 </script>
 </body>
 </html>
