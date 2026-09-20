@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tejer la red — REA para la inclusión digital de personas mayores</title>
 <meta name="description" content="Recurso educativo abierto para la inclusión digital de personas mayores institucionalizadas a través de la obra de Frida Kahlo. ANEP-IFES, Educación Social.">
-<link rel="manifest" href="../manifest.webmanifest">
+<link rel="manifest" href="../manifest.webmanifest?v=azul-1">
 <meta name="theme-color" content="#00537F">
 <link rel="icon" type="image/png" href="../favicon-32.png" sizes="32x32">
 <link rel="icon" type="image/png" href="../favicon-64.png" sizes="64x64">
@@ -246,11 +246,11 @@ html.high-contrast .plain-note{border-left-color:#14411f;background:#fff}
 .hero .badge{margin-bottom:1rem;text-align:center}
 .hero-mark{position:relative;z-index:1;width:100%;justify-self:end;transform-style:preserve-3d}
 .hero-mark::after{content:"";position:absolute;z-index:-1;left:17%;right:8%;bottom:3%;height:14%;border-radius:50%;background:rgba(0,20,36,.48);filter:blur(15px);transform:perspective(520px) rotateX(67deg) translateY(13px)}
-.hero-emblem{display:block;width:100%;height:auto;filter:drop-shadow(0 24px 14px rgba(0,20,36,.5)) drop-shadow(0 4px 2px rgba(255,255,255,.16));transform:perspective(850px) rotateY(-9deg) rotateZ(1.4deg);transform-origin:50% 60%;animation:rea-emblem-float 5.5s ease-in-out infinite;transition:transform .35s ease,filter .35s ease}
-.hero-mark:hover .hero-emblem{filter:drop-shadow(0 29px 16px rgba(0,20,36,.58)) drop-shadow(0 4px 2px rgba(255,255,255,.2));transform:perspective(850px) rotateY(-3deg) rotateZ(-.6deg) translateY(-6px) scale(1.015)}
-@keyframes rea-emblem-float{50%{transform:perspective(850px) rotateY(-5deg) rotateZ(-.8deg) translateY(-7px)}}
+.hero-emblem{display:block;width:100%;height:auto;filter:drop-shadow(0 24px 14px rgba(0,20,36,.5)) drop-shadow(0 4px 2px rgba(255,255,255,.16));transform-origin:50% 50%;animation:rea-emblem-spin 18s linear infinite;will-change:transform}
+.hero-mark:hover .hero-emblem{filter:drop-shadow(0 29px 16px rgba(0,20,36,.58)) drop-shadow(0 4px 2px rgba(255,255,255,.2))}
+@keyframes rea-emblem-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @media(max-width:700px){.hero{padding:2.25rem 1rem 1.2rem;text-align:center}.hero-inner{grid-template-columns:1fr;gap:.55rem}.hero .sub br{display:none}.hero-mark{width:min(72vw,278px);justify-self:center;margin-top:.25rem}.hero-mark::after{bottom:1%}}
-@media(prefers-reduced-motion:reduce){.hero-emblem{animation:none;transition:none}.hero-mark:hover .hero-emblem{transform:perspective(850px) rotateY(-9deg) rotateZ(1.4deg)}}
+@media(prefers-reduced-motion:reduce){.hero-emblem{animation:none;transform:none}.hero-mark:hover .hero-emblem{transform:none}}
 @media print{.hero-mark{display:none!important}.hero-inner{display:block}.hero{text-align:center}}
 
 </style>
@@ -278,7 +278,7 @@ html.high-contrast .plain-note{border-left-color:#14411f;background:#fff}
    <p class="meta">Favio Velázquez · América Palafox · ANEP-IFES · Educación Social y Tecnología · 2026</p>
   </div>
   <div class="hero-mark" aria-hidden="true">
-   <img class="hero-emblem" src="../logo-trama-abierta.svg" width="512" height="512" alt="" decoding="async">
+   <img class="hero-emblem" src="../logo-trama-abierta.svg?v=macrame-1" width="512" height="512" alt="" decoding="async">
   </div>
  </div>
 </div>
