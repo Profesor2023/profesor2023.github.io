@@ -1,6 +1,6 @@
 /* Tejer la red - service worker
    Guarda una copia del sitio para usarlo sin conexion. */
-var CACHE='tejer-la-red-v1-6-identidad-7';
+var CACHE='tejer-la-red-v1-6-identidad-8';
 var BASICOS=[
  './','./index.html','./estilo.css?v=trama-abierta-1','./manifest.webmanifest?v=azul-1',
  './tejer-la-red/','./tejer-la-red/index.html',
@@ -25,6 +25,19 @@ self.addEventListener('fetch',function(ev){
  if(req.method!=='GET')return;
  var url=new URL(req.url);
  if(url.origin!==location.origin)return;   /* nunca intercepta museos ni video */
+ /* Los documentos se consultan primero en la red para no conservar una
+    interfaz anterior. La copia local queda como respaldo sin conexión. */
+ if(req.mode==='navigate'||req.destination==='document'){
+  ev.respondWith(
+   fetch(req,{cache:'no-store'}).then(function(resp){
+    if(resp&&resp.status===200){var copia=resp.clone();caches.open(CACHE).then(function(c){c.put(req,copia);});}
+    return resp;
+   }).catch(function(){
+    return caches.match(req).then(function(guardada){return guardada||caches.match('./index.html');});
+   })
+  );
+  return;
+ }
  ev.respondWith(
   caches.match(req).then(function(guardada){
    var red=fetch(req).then(function(resp){
