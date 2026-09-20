@@ -1,66 +1,100 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
-  <title id="title">Trama abierta</title>
-  <desc id="description">Hilos entrelazados en una forma circular abierta, con cinco nodos conectados y uno destacado.</desc>
+  <title id="title">Trama abierta en macramé</title>
+  <desc id="description">Cordones de macramé de fibra natural, teñidos con acuarela, forman una trama circular abierta con cinco nudos conectados.</desc>
   <defs>
-    <linearGradient id="azul-tejido" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#D6E9F8"/>
-      <stop offset="1" stop-color="#4FA7B8"/>
-    </linearGradient>
-    <linearGradient id="verde-tejido" x1="0" y1="1" x2="1" y2="0">
-      <stop offset="0" stop-color="#A8D8CC"/>
-      <stop offset="1" stop-color="#2A8077"/>
-    </linearGradient>
-    <linearGradient id="oro-tejido" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#F0CF79"/>
-      <stop offset="1" stop-color="#B97922"/>
-    </linearGradient>
-    <filter id="relieve" x="-25%" y="-25%" width="150%" height="160%">
-      <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#001E32" flood-opacity=".42"/>
-      <feDropShadow dx="0" dy="2" stdDeviation="1.5" flood-color="#FFFFFF" flood-opacity=".22"/>
+    <!-- Las franjas diagonales y sus pequeñas variaciones reemplazan el acabado liso de un tubo. -->
+    <pattern id="macrame-azul" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(31)">
+      <rect width="22" height="22" fill="#EADFCB"/>
+      <rect width="8" height="22" fill="#6FAFC1" fill-opacity=".88"/>
+      <rect x="8" width="5" height="22" fill="#B8D8DE"/>
+      <rect x="13" width="7" height="22" fill="#F5EAD6"/>
+      <path d="M1 0V22M12 0V22M21 0V22" stroke="#FFF9EC" stroke-width="1.6" stroke-opacity=".72"/>
+    </pattern>
+    <pattern id="macrame-verde" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(31)">
+      <rect width="22" height="22" fill="#EADFCB"/>
+      <rect width="8" height="22" fill="#62A596" fill-opacity=".88"/>
+      <rect x="8" width="5" height="22" fill="#BDD8CB"/>
+      <rect x="13" width="7" height="22" fill="#F5EAD6"/>
+      <path d="M1 0V22M12 0V22M21 0V22" stroke="#FFF9EC" stroke-width="1.6" stroke-opacity=".72"/>
+    </pattern>
+    <pattern id="macrame-oro" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(31)">
+      <rect width="22" height="22" fill="#EADFCB"/>
+      <rect width="8" height="22" fill="#D5A04C" fill-opacity=".9"/>
+      <rect x="8" width="5" height="22" fill="#EDD18E"/>
+      <rect x="13" width="7" height="22" fill="#F7EBD5"/>
+      <path d="M1 0V22M12 0V22M21 0V22" stroke="#FFF9EC" stroke-width="1.6" stroke-opacity=".75"/>
+    </pattern>
+    <pattern id="macrame-rosa" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(31)">
+      <rect width="22" height="22" fill="#EADFCB"/>
+      <rect width="8" height="22" fill="#B87592" fill-opacity=".86"/>
+      <rect x="8" width="5" height="22" fill="#D6A9B8"/>
+      <rect x="13" width="7" height="22" fill="#F4E8D5"/>
+      <path d="M1 0V22M12 0V22M21 0V22" stroke="#FFF9EC" stroke-width="1.6" stroke-opacity=".72"/>
+    </pattern>
+
+    <filter id="acuarela" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="5.5"/>
     </filter>
+    <filter id="fibra" x="-22%" y="-22%" width="144%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency=".018 .11" numOctaves="2" seed="9" result="grano"/>
+      <feDisplacementMap in="SourceGraphic" in2="grano" scale="1.45" xChannelSelector="R" yChannelSelector="B" result="irregular"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="3.2" flood-color="#082E43" flood-opacity=".28"/>
+    </filter>
+
+    <path id="aro-a" d="M105 326A188 188 0 0 1 171 89"/>
+    <path id="aro-b" d="M199 72A188 188 0 0 1 439 205"/>
+    <path id="aro-c" d="M447 241A188 188 0 0 1 306 438"/>
+    <path id="aro-d" d="M271 446A188 188 0 0 1 117 358"/>
+    <path id="hilo-a" d="M61 315C149 237 221 151 452 130"/>
+    <path id="hilo-b" d="M116 66C164 166 218 305 430 416"/>
+    <path id="hilo-c" d="M61 205C174 274 287 280 455 223"/>
+    <path id="hilo-d" d="M151 446C220 337 284 169 392 65"/>
+
+    <style>
+      .lavado{fill:none;stroke-linecap:round;opacity:.22;filter:url(#acuarela)}
+      .lavado.aro{stroke-width:38}.lavado.hilo{stroke-width:27}
+      .fibra-base{fill:none;stroke:#E8D9C1;stroke-linecap:round;stroke-linejoin:round;opacity:.92}
+      .fibra-base.aro{stroke-width:25}.fibra-base.hilo{stroke-width:17}
+      .cordon{fill:none;stroke-linecap:round;stroke-linejoin:round;filter:url(#fibra)}
+      .cordon.aro{stroke-width:19}.cordon.hilo{stroke-width:11}
+      .filamento{fill:none;stroke-linecap:round;stroke-width:2.6;opacity:.78}
+      .nudo-sombra{fill:none;stroke:#E8D9C1;stroke-width:11;stroke-linecap:round;stroke-linejoin:round;opacity:.95}
+      .nudo{fill:none;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;filter:url(#fibra)}
+    </style>
   </defs>
 
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#relieve)">
-    <!-- El contorno queda deliberadamente abierto: el recurso puede continuar y adaptarse. -->
-    <path d="M104 326A188 188 0 0 1 170 89" stroke="#073B5C" stroke-width="34"/>
-    <path d="M104 326A188 188 0 0 1 170 89" stroke="url(#azul-tejido)" stroke-width="22"/>
-    <path d="M198 72A188 188 0 0 1 439 205" stroke="#073B5C" stroke-width="34"/>
-    <path d="M198 72A188 188 0 0 1 439 205" stroke="url(#oro-tejido)" stroke-width="22"/>
-    <path d="M447 240A188 188 0 0 1 306 438" stroke="#073B5C" stroke-width="34"/>
-    <path d="M447 240A188 188 0 0 1 306 438" stroke="url(#verde-tejido)" stroke-width="22"/>
-    <path d="M272 446A188 188 0 0 1 116 358" stroke="#073B5C" stroke-width="34"/>
-    <path d="M272 446A188 188 0 0 1 116 358" stroke="url(#azul-tejido)" stroke-width="22"/>
-
-    <!-- Cuatro recorridos se cruzan sin un centro jerárquico. -->
-    <path d="M61 315C149 237 221 151 452 130" stroke="#073B5C" stroke-width="24"/>
-    <path d="M61 315C149 237 221 151 452 130" stroke="url(#azul-tejido)" stroke-width="12"/>
-    <path d="M116 66C164 166 218 305 430 416" stroke="#073B5C" stroke-width="24"/>
-    <path d="M116 66C164 166 218 305 430 416" stroke="url(#verde-tejido)" stroke-width="12"/>
-    <path d="M61 205C174 274 287 280 455 223" stroke="#073B5C" stroke-width="24"/>
-    <path d="M61 205C174 274 287 280 455 223" stroke="url(#oro-tejido)" stroke-width="12"/>
-    <path d="M151 446C220 337 284 169 392 65" stroke="#073B5C" stroke-width="24"/>
-    <path d="M151 446C220 337 284 169 392 65" stroke="url(#azul-tejido)" stroke-width="12"/>
+  <!-- Manchas suaves de acuarela alrededor de la fibra. -->
+  <g>
+    <use href="#aro-a" class="lavado aro" stroke="#72B4C3"/><use href="#aro-b" class="lavado aro" stroke="#D8A24C"/>
+    <use href="#aro-c" class="lavado aro" stroke="#66A596"/><use href="#aro-d" class="lavado aro" stroke="#B97896"/>
+    <use href="#hilo-a" class="lavado hilo" stroke="#72B4C3"/><use href="#hilo-b" class="lavado hilo" stroke="#66A596"/>
+    <use href="#hilo-c" class="lavado hilo" stroke="#D8A24C"/><use href="#hilo-d" class="lavado hilo" stroke="#B97896"/>
   </g>
 
-  <!-- Cinco encuentros: nodos equivalentes; uno se distingue sin quedar aislado. -->
-  <g stroke="#073B5C" stroke-width="9" filter="url(#relieve)">
-    <circle cx="151" cy="238" r="17" fill="#D6E9F8"/>
-    <circle cx="236" cy="208" r="17" fill="#A8D8CC"/>
-    <circle cx="302" cy="259" r="17" fill="#F3EEE4"/>
-    <circle cx="358" cy="337" r="17" fill="#A8D8CC"/>
-    <circle cx="250" cy="135" r="17" fill="#D6E9F8"/>
-    <circle cx="302" cy="259" r="8" fill="#C88928" stroke-width="0"/>
+  <!-- Cordones de fibra natural con trenzado diagonal visible. -->
+  <g>
+    <use href="#aro-a" class="fibra-base aro"/><use href="#aro-a" class="cordon aro" stroke="url(#macrame-azul)"/>
+    <use href="#aro-b" class="fibra-base aro"/><use href="#aro-b" class="cordon aro" stroke="url(#macrame-oro)"/>
+    <use href="#aro-c" class="fibra-base aro"/><use href="#aro-c" class="cordon aro" stroke="url(#macrame-verde)"/>
+    <use href="#aro-d" class="fibra-base aro"/><use href="#aro-d" class="cordon aro" stroke="url(#macrame-rosa)"/>
+    <use href="#hilo-a" class="fibra-base hilo"/><use href="#hilo-a" class="cordon hilo" stroke="url(#macrame-azul)"/>
+    <use href="#hilo-b" class="fibra-base hilo"/><use href="#hilo-b" class="cordon hilo" stroke="url(#macrame-verde)"/>
+    <use href="#hilo-c" class="fibra-base hilo"/><use href="#hilo-c" class="cordon hilo" stroke="url(#macrame-oro)"/>
+    <use href="#hilo-d" class="fibra-base hilo"/><use href="#hilo-d" class="cordon hilo" stroke="url(#macrame-rosa)"/>
   </g>
 
-  <!-- Los extremos visibles refuerzan que la trama no está clausurada. -->
-  <g fill="#F3EEE4" stroke="#073B5C" stroke-width="7">
-    <circle cx="61" cy="315" r="9"/>
-    <circle cx="452" cy="130" r="9"/>
-    <circle cx="116" cy="66" r="9"/>
-    <circle cx="430" cy="416" r="9"/>
-    <circle cx="61" cy="205" r="9"/>
-    <circle cx="455" cy="223" r="9"/>
-    <circle cx="151" cy="446" r="9"/>
-    <circle cx="392" cy="65" r="9"/>
+  <!-- Extremos abiertos con pequeñas fibras sueltas. -->
+  <g>
+    <path class="filamento" stroke="#A9CFD8" d="M105 326Q94 334 86 346M106 327Q91 328 80 332M171 89Q168 75 171 62M172 90Q179 76 185 67"/>
+    <path class="filamento" stroke="#E4C276" d="M199 72Q193 58 188 49M200 72Q207 58 213 49M439 205Q451 205 463 212"/>
+    <path class="filamento" stroke="#9FC9B8" d="M447 241Q461 237 472 239M306 438Q302 452 296 462"/>
+    <path class="filamento" stroke="#D3A2B4" d="M271 446Q278 459 286 467M117 358Q104 361 92 368"/>
   </g>
+
+  <!-- Cinco nudos textiles conectados; el central se destaca sin dominar la trama. -->
+  <g transform="translate(151 238)"><path class="nudo-sombra" d="M-15 0C-15-11-4-15 0-5C4-15 15-11 15 0C15 11 4 15 0 5C-4 15-15 11-15 0Z"/><path class="nudo" stroke="url(#macrame-azul)" d="M-15 0C-15-11-4-15 0-5C4-15 15-11 15 0C15 11 4 15 0 5C-4 15-15 11-15 0Z"/></g>
+  <g transform="translate(236 208)"><path class="nudo-sombra" d="M-15 0C-15-11-4-15 0-5C4-15 15-11 15 0C15 11 4 15 0 5C-4 15-15 11-15 0Z"/><path class="nudo" stroke="url(#macrame-verde)" d="M-15 0C-15-11-4-15 0-5C4-15 15-11 15 0C15 11 4 15 0 5C-4 15-15 11-15 0Z"/></g>
+  <g transform="translate(302 259)"><circle r="24" fill="#E7B75F" opacity=".2" filter="url(#acuarela)"/><path class="nudo-sombra" stroke-width="13" d="M-18 0C-18-14-5-18 0-6C5-18 18-14 18 0C18 14 5 18 0 6C-5 18-18 14-18 0Z"/><path class="nudo" stroke="url(#macrame-oro)" stroke-width="8" d="M-18 0C-18-14-5-18 0-6C5-18 18-14 18 0C18 14 5 18 0 6C-5 18-18 14-18 0Z"/></g>
+  <g transform="translate(358 337)"><path class="nudo-sombra" d="M-15 0C-15-11-4-15 0-5C4-15 15-11 15 0C15 11 4 15 0 5C-4 15-15 11-15 0Z"/><path class="nudo" stroke="url(#macrame-rosa)" d="M-15 0C-15-11-4-15 0-5C4-15 15-11 15 0C15 11 4 15 0 5C-4 15-15 11-15 0Z"/></g>
+  <g transform="translate(250 135)"><path class="nudo-sombra" d="M-15 0C-15-11-4-15 0-5C4-15 15-11 15 0C15 11 4 15 0 5C-4 15-15 11-15 0Z"/><path class="nudo" stroke="url(#macrame-azul)" d="M-15 0C-15-11-4-15 0-5C4-15 15-11 15 0C15 11 4 15 0 5C-4 15-15 11-15 0Z"/></g>
 </svg>
