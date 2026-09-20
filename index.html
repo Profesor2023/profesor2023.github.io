@@ -6,7 +6,7 @@
 <title>Educación social y tecnologías · Favio Velázquez</title>
 <meta name="description" content="Recursos educativos abiertos sobre educación social, inclusión digital y tecnologías, ANEP-IFES.">
 <script>
-(function(){try{if(!sessionStorage.getItem('portal:intro:v1'))document.documentElement.classList.add('intro-pending');}catch(e){document.documentElement.classList.add('intro-pending');}})();
+(function(){try{if(!sessionStorage.getItem('portal:intro:v2'))document.documentElement.classList.add('intro-pending');}catch(e){document.documentElement.classList.add('intro-pending');}})();
 </script>
 <style>
 /* Evita que las imágenes de apertura aparezcan sin estilo sobre fondo blanco. */
@@ -112,7 +112,7 @@ if('serviceWorker' in navigator){window.addEventListener('load',function(){navig
  function cerrar(){
   if(terminado)return;terminado=true;
   intro.classList.add('is-leaving');
-  try{sessionStorage.setItem('portal:intro:v1','vista');}catch(e){}
+  try{sessionStorage.setItem('portal:intro:v2','vista');}catch(e){}
   window.setTimeout(function(){
    root.classList.remove('intro-pending','intro-active');
    intro.setAttribute('aria-hidden','true');
@@ -122,8 +122,6 @@ if('serviceWorker' in navigator){window.addEventListener('load',function(){navig
   },760);
  }
  boton.addEventListener('click',cerrar);
- document.addEventListener('keydown',function(ev){if(ev.key==='Escape')cerrar();});
- window.setTimeout(cerrar,window.matchMedia('(prefers-reduced-motion: reduce)').matches?1200:6200);
  window.setTimeout(function(){if(!terminado)boton.focus();},120);
 })();
 </script>
