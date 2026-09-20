@@ -1,12 +1,12 @@
 /* Tejer la red - service worker
    Guarda una copia del sitio para usarlo sin conexion. */
-var CACHE='tejer-la-red-v1-6-identidad-5';
+var CACHE='tejer-la-red-v1-6-identidad-6';
 var BASICOS=[
- './','./index.html','./estilo.css?v=trama-abierta-1','./manifest.webmanifest',
+ './','./index.html','./estilo.css?v=trama-abierta-1','./manifest.webmanifest?v=azul-1',
  './tejer-la-red/','./tejer-la-red/index.html',
  './recursos/','./recursos/index.html',
  './temas/','./temas/index.html',
- './icono-192.png','./icono-512.png','./marca-tejer-la-red.png','./marca-intro-base.png','./logo-trama-abierta.svg',
+ './icono-192.png','./icono-512.png','./marca-tejer-la-red.png','./marca-intro-base.png','./logo-trama-abierta.svg?v=macrame-1',
  './favicon.ico','./favicon-32.png','./favicon-64.png',
  './tejer-la-red/Materiales_uso_sin_conexion.pdf'
 ];
