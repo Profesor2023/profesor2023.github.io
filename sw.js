@@ -1,6 +1,6 @@
 /* Tejer la red - service worker
    Guarda una copia del sitio para usarlo sin conexion. */
-var CACHE='tejer-la-red-v1-6-identidad-8';
+var CACHE='tejer-la-red-v2-0';
 var BASICOS=[
  './','./index.html','./estilo.css?v=trama-abierta-1','./manifest.webmanifest?v=azul-1',
  './tejer-la-red/','./tejer-la-red/index.html',
@@ -8,7 +8,7 @@ var BASICOS=[
  './temas/','./temas/index.html',
  './icono-192.png','./icono-512.png','./marca-tejer-la-red.png','./marca-intro-base.png','./logo-trama-abierta-macrame.webp?v=1',
  './favicon.ico','./favicon-32.png','./favicon-64.png',
- './tejer-la-red/Materiales_uso_sin_conexion.pdf'
+ './tejer-la-red/Tejer_la_red_cuadernillo_v2.pdf'
 ];
 self.addEventListener('install',function(ev){
  ev.waitUntil(caches.open(CACHE).then(function(c){
