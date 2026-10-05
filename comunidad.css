@@ -1,0 +1,23 @@
+/* Controles comunes del espacio de comunicación y del permiso de visitas. */
+[hidden]{display:none!important}
+.community-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;margin:1rem 0}
+.community-button{display:inline-block;border:2px solid #00577A;border-radius:6px;padding:.6rem 1rem;min-height:44px;background:#00577A;color:#fff;font:inherit;font-weight:700;text-decoration:none;cursor:pointer}
+.community-button.secondary{background:#fff;color:#00577A}
+.community-button:disabled{opacity:.6;cursor:default}
+.community-button:focus-visible,.community-form input:focus-visible,.community-form textarea:focus-visible,.community-form select:focus-visible{outline:3px solid #D39A0A;outline-offset:3px}
+.community-form{max-width:720px}
+.community-form .field{margin:1.1rem 0}
+.community-form label{display:block;font-weight:700;margin-bottom:.35rem}
+.community-form input:not([type=checkbox]),.community-form textarea,.community-form select{display:block;width:100%;max-width:100%;border:2px solid #526670;border-radius:4px;background:#fff;color:#1A1A1A;font:inherit;padding:.65rem}
+.community-form textarea{min-height:180px;resize:vertical}
+.community-form .consent{display:flex;align-items:flex-start;gap:.6rem;font-weight:400}
+.community-form input[type=checkbox]{width:22px;height:22px;flex:0 0 22px;margin-top:.25rem;accent-color:#00577A}
+.community-help{font-size:.95rem;margin:.3rem 0 1rem}
+.community-status{min-height:1.5em}
+.chat-frame{width:100%;height:min(72vh,640px);min-height:400px;border:2px solid #526670;border-radius:5px;background:#fff}
+.stats-panel{font:inherit;margin-top:1rem;padding-top:.8rem;border-top:1px solid currentColor}
+.stats-panel p{margin:.4rem auto;max-width:72ch}
+.stats-panel .community-actions{justify-content:center}
+.stats-panel .community-button{background:#fff;color:#00577A;border-color:#fff;font-size:.95rem}
+@media(max-width:600px){.chat-frame{height:72vh;min-height:440px}.community-actions{align-items:stretch}.community-actions .community-button{max-width:100%}.community-form input,.community-form textarea,.community-form select{font-size:1rem}}
+@media print{.stats-panel,.community-actions,.community-form,.chat-frame{display:none!important}}

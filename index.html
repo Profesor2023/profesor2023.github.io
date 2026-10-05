@@ -28,6 +28,8 @@ html.intro-pending #intro-skip{min-height:46px;border:2px solid #F0CF79;border-r
 <link rel="apple-touch-icon" href="icono-192.png">
 <link rel="preload" as="image" href="marca-intro-base.png">
 <link rel="preload" as="image" href="marca-tejer-la-red.png">
+<link rel="stylesheet" href="comunidad.css">
+ <script src="configuracion-comunidad.js" defer></script><script src="estadisticas.js" defer></script>
 </head>
 <body>
 <div class="site-intro" id="site-intro" role="dialog" aria-modal="true" aria-labelledby="intro-title">
@@ -48,7 +50,7 @@ html.intro-pending #intro-skip{min-height:46px;border:2px solid #F0CF79;border-r
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 <nav aria-label="Secciones del sitio">
  <a class="brand" href="./">Favio Velázquez · Educación Social</a>
- <a href="" aria-current="page">Inicio</a><a href="tejer-la-red/">Tejer la red</a><a href="recursos/">Recursos educativos</a><a href="temas/">Temas de educación social</a>
+ <a href="" aria-current="page">Inicio</a><a href="tejer-la-red/">Tejer la red</a><a href="recursos/">Recursos educativos</a><a href="temas/">Temas de educación social</a><a href="comunicacion/">Dialogar y contactar</a>
 </nav>
 <header class="hero">
  <div class="hero-inner">
@@ -89,12 +91,13 @@ html.intro-pending #intro-skip{min-height:46px;border:2px solid #F0CF79;border-r
 <section>
  <h2>Usá el sitio sin conexión</h2>
  <p>Este sitio funciona como aplicación instalable. Desde el menú del navegador, la opción <strong>Instalar</strong> o <strong>Añadir a la pantalla de inicio</strong> deja una copia en el dispositivo que se abre sin datos ni wifi. Es útil en instituciones sin conexión fija, que es justamente el escenario para el que se diseñó <em>Tejer la red</em>.</p>
- <div class="aviso"><p>No se usan cookies ni se registran datos personales. El conteo de visitas, cuando esté activo, es agregado y sin direcciones IP.</p></div>
+ <div class="aviso"><p>Las preguntas del asistente y los ajustes de lectura permanecen en tu navegador. El chat, el formulario y el eventual conteo de visitas tienen sus propias condiciones: <a href="comunicacion/#privacidad">consultá el aviso de privacidad</a>.</p></div>
 </section>
 </main>
 <footer>
  <p>Favio Velázquez · Educador Social en formación, ANEP-IFES · Profesor de Informática, DGETP-UTU</p>
  <p>Contenidos propios bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">licencia CC BY-NC-SA 4.0</a> salvo indicación en contrario.</p>
+<div class="stats-panel" data-stats><p data-stats-status role="status">Conteo de visitas: no activo.</p><p>El conteo opcional usa GoatCounter. <a href="comunicacion/#privacidad">Cómo se tratan los datos</a>.</p><div class="community-actions"><button class="community-button" type="button" data-stats-allow hidden>Permitir el conteo de mi visita</button><button class="community-button" type="button" data-stats-revoke hidden>Retirar permiso de conteo</button></div></div>
 </footer>
 <script>
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js?v=espera-boton-1',{scope:'./',updateViaCache:'none'}).then(function(registro){registro.update();}).catch(function(){});});}

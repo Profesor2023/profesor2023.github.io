@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="referrer" content="strict-origin-when-cross-origin">
+ <title>Dialogar y contactar · Tejer la red</title>
+ <meta name="description" content="Espacio opcional para conversar en tiempo real sobre Tejer la red y enviar consultas a Favio Velázquez.">
+ <meta name="theme-color" content="#00577A">
+ <link rel="canonical" href="https://profesor2023.github.io/comunicacion/">
+ <link rel="stylesheet" href="../estilo.css?v=trama-abierta-1"><link rel="stylesheet" href="../comunidad.css">
+ <link rel="icon" href="../favicon.ico"><link rel="manifest" href="../manifest.webmanifest?v=azul-1">
+ <script src="../configuracion-comunidad.js" defer></script><script src="comunicacion.js" defer></script><script src="../estadisticas.js" defer></script>
+</head>
+<body>
+ <a class="skip-link" href="#contenido">Saltar al contenido</a>
+ <nav aria-label="Secciones del sitio">
+  <a class="brand" href="../">Favio Velázquez · Educación Social</a>
+  <a href="../">Inicio</a><a href="../tejer-la-red/">Tejer la red</a><a href="../recursos/">Recursos educativos</a><a href="../temas/">Temas de educación social</a><a href="./" aria-current="page">Dialogar y contactar</a>
+ </nav>
+ <header class="hero"><h1>Dialogar y contactar</h1><p>Un espacio para intercambiar sobre cultura, educación social y las adaptaciones de Tejer la red.</p></header>
+ <main id="contenido">
+  <p>Podés conversar con otras personas que estén conectadas o enviar una consulta a Favio para que la responda más adelante. Son canales opcionales: necesitan internet. Las guías y fichas del recurso siguen disponibles sin conexión después de guardarlas en el dispositivo.</p>
+  <p><strong>Cuidemos a las personas:</strong> usá un alias y compartí ideas sobre el recurso. No publiques nombres, fotografías, datos de salud ni producciones que permitan identificar a residentes.</p>
+  <p><a href="#dialogo">Ir al chat público</a> · <a href="#mensaje">Escribir una consulta</a> · <a href="#privacidad">Leer cómo se tratan los datos</a></p>
+  <section id="dialogo">
+   <h2>Conversación en tiempo real</h2>
+   <p>La sala permite dialogar entre quienes estén conectados al mismo tiempo. Para una conversación coordinada, acordá un horario y una pregunta, por ejemplo: ¿cómo acompañarías el acceso a la cultura mexicana con tu grupo?</p>
+   <p>El chat usa <a href="https://tlk.io/" target="_blank" rel="noopener noreferrer">tlk.io</a>. La sala es pública y no tiene moderación permanente: cualquier persona con el enlace puede entrar y leer. El servicio procesa tu dirección IP, el alias y los mensajes, y utiliza Google Analytics. Según su política, los mensajes de salas sin moderación se eliminan del servicio después de diez minutos; otras personas pueden copiarlos.</p>
+   <p><a href="https://tlk.io/privacy" target="_blank" rel="noopener noreferrer">Privacidad de tlk.io</a> · <a href="https://tlk.io/#embed" target="_blank" rel="noopener noreferrer">Condiciones del servicio</a></p>
+   <div class="community-form">
+    <label class="consent" for="chat-consent"><input id="chat-consent" type="checkbox" required>Entiendo que la sala es pública y autorizo la conexión con tlk.io para participar en el chat.</label>
+   </div>
+   <div class="community-actions">
+    <button id="open-live-chat" class="community-button" type="button" disabled>Abrir el chat público</button>
+    <button id="close-live-chat" class="community-button secondary" type="button" hidden>Salir del chat</button>
+    <a id="chat-external-link" href="https://tlk.io/tejer-la-red-ifes-2026" target="_blank" rel="noopener noreferrer">Abrir la misma sala en otra pestaña</a>
+   </div>
+   <p id="live-chat-status" class="community-status" role="status">El chat no se carga hasta que decidas abrirlo. Favio puede no estar conectado.</p>
+   <div id="live-chat" hidden></div>
+   <noscript><p>Para el chat integrado necesitás JavaScript. Podés abrir la sala externa con el enlace de arriba, con las mismas condiciones de privacidad.</p></noscript>
+  </section>
+  <section id="mensaje">
+   <h2>Enviar una consulta a Favio</h2>
+   <p>El mensaje se dirige a <a data-contact-email href="mailto:faviovelazquez17@gmail.com">faviovelazquez17@gmail.com</a>. Este canal sirve para consultas, sugerencias de adaptación y problemas con el recurso. La respuesta puede llegar más adelante.</p>
+   <p id="contact-activation" class="community-help">La verificación del correo destinatario está pendiente. El formulario puede solicitar su activación antes de entregar mensajes. Podés usar también el enlace de correo directo.</p>
+   <p>Al continuar, tus datos pasan a <a href="https://formsubmit.co/" target="_blank" rel="noopener noreferrer">FormSubmit</a>, que gestiona el envío al correo de Favio. El servicio puede pedir una verificación reCAPTCHA de Google para reducir el correo no deseado. <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">Consultar su privacidad y condiciones</a>.</p>
+   <form id="contact-form" class="community-form" action="https://formsubmit.co/faviovelazquez17@gmail.com" method="post" target="_blank" rel="noopener">
+    <input type="hidden" name="_subject" value="Tejer la red · Consulta desde el sitio">
+    <input type="hidden" name="_next" value="https://profesor2023.github.io/comunicacion/gracias.html">
+    <input type="hidden" name="_template" value="table">
+    <div hidden aria-hidden="true"><label for="contact-honey">Dejar vacío</label><input id="contact-honey" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
+    <div class="field"><label for="contact-name">Nombre o alias (opcional)</label><input id="contact-name" name="Nombre o alias" type="text" maxlength="80" autocomplete="nickname"></div>
+    <div class="field"><label for="contact-email">Tu correo para recibir una respuesta</label><input id="contact-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" aria-describedby="contact-email-help"><p class="community-help" id="contact-email-help">Se utiliza para responder a esta consulta.</p></div>
+    <div class="field"><label for="contact-topic">Motivo de la consulta</label><select id="contact-topic" name="Motivo"><option>Consulta sobre el recurso</option><option>Propuesta de adaptación</option><option>Problema de funcionamiento</option><option>Otro aporte sobre el trabajo</option></select></div>
+    <div class="field"><label for="contact-message">Mensaje</label><textarea id="contact-message" name="Mensaje" required minlength="10" maxlength="4000" aria-describedby="contact-message-help"></textarea><p class="community-help" id="contact-message-help">Entre 10 y 4.000 caracteres. No incluyas datos ni archivos de residentes.</p></div>
+    <div class="field"><label class="consent" for="contact-consent"><input id="contact-consent" name="Consentimiento" type="checkbox" required value="Autorizo el tratamiento de estos datos para responder a mi consulta"><span>Autorizo el envío de mi correo y mensaje a Favio mediante FormSubmit para responder a esta consulta. Leí el <a href="#privacidad">aviso de privacidad</a>.</span></label></div>
+    <div class="community-actions"><button class="community-button" type="submit">Continuar al envío del mensaje</button><a data-contact-email href="mailto:faviovelazquez17@gmail.com">faviovelazquez17@gmail.com</a></div>
+   </form>
+   <p id="contact-status" class="community-status" role="status">La continuación se abre en otra pestaña y conserva el texto en esta página. Si el servicio no está disponible, podés escribir desde tu aplicación de correo.</p>
+  </section>
+  <section id="privacidad">
+   <h2>Privacidad de estos canales</h2>
+   <p>Las preguntas del asistente del REA se resuelven dentro del navegador: no se envían al chat ni al formulario. Las preferencias de lectura y las notas de adaptación también permanecen en el dispositivo.</p>
+   <p>El chat y el formulario son servicios externos que solo se conectan cuando los abrís o continuás un envío. El chat comparte tus mensajes con otras personas; el formulario los dirige a Favio. GitHub Pages aloja el sitio y aplica sus propias condiciones de servicio.</p>
+   <p>Favio utiliza el nombre o alias, el correo y el mensaje recibidos para atender la consulta. No se publican automáticamente ni se usan para una lista de difusión. Para solicitar la eliminación de un mensaje recibido, escribí al correo de contacto. Podés cerrar el chat en cualquier momento; tlk.io permite borrar un mensaje propio desde el control junto a ese mensaje.</p>
+   <p>El estado del conteo de visitas se muestra al pie. La integración preparada con GoatCounter, cuando se active y des tu permiso, distinguirá visitas mediante la IP y el navegador durante hasta ocho horas. El proveedor mantiene esa relación en memoria, sin guardar direcciones IP en su base de datos ni usar cookies de seguimiento. Es una aproximación a las visitas, no un registro permanente de IP ni un conteo exacto de personas. Podés retirar el permiso desde el mismo pie. <a href="https://www.goatcounter.com/help/privacy" target="_blank" rel="noopener noreferrer">Privacidad de GoatCounter</a>.</p>
+   <p>Estos espacios sirven para el intercambio sobre el recurso. La eventual publicación de producciones de residentes sigue el <a href="../tejer-la-red/#privacidad">protocolo específico del trabajo</a>, con autorización individual e institucional; no se realiza a través de esta sala ni de este formulario.</p>
+  </section>
+ </main>
+ <footer>
+  <p>Tejer la red · Favio Velázquez y América Palafox · ANEP-IFES · 2026</p>
+  <p>Materiales propios bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Los servicios externos y los mensajes de otras personas quedan fuera de esta licencia.</p>
+  <div class="stats-panel" data-stats><p data-stats-status role="status">Conteo de visitas: no activo.</p><p>El conteo opcional usa GoatCounter. <a href="#privacidad">Cómo se tratan los datos</a>.</p><div class="community-actions"><button class="community-button" type="button" data-stats-allow hidden>Permitir el conteo de mi visita</button><button class="community-button" type="button" data-stats-revoke hidden>Retirar permiso de conteo</button></div></div>
+ </footer>
+ <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js').catch(function(){});});}</script>
+</body>
+</html>
