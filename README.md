@@ -27,7 +27,7 @@ Se corrigieron la prioridad de la respuesta sobre objetivos y la captura del his
 
 Las herramientas educativas usan HTML, CSS y JavaScript propios. El asistente no es IA generativa: no utiliza claves de API ni transmite consultas. Preferencias, preparativos y notas son locales. El service worker conserva páginas, estilos, scripts y cuadernillo después de una visita con conexión. Museos, video, chat, correo y estadísticas necesitan internet.
 
-El chat se conecta a tlk.io al pulsar el botón, después del aviso y del consentimiento. La sala es pública, sin moderación permanente. El proveedor procesa alias, IP y mensajes; según su política, retira los mensajes de salas no moderadas después de diez minutos. No sirve para registrar ni publicar producciones de residentes.
+El chat se conecta a tlk.io al pulsar el botón, después del aviso y del consentimiento. La sala es pública, sin moderación permanente. Si el navegador limita el ingreso al chat incrustado, el enlace permite abrir la misma conversación en otra pestaña. Se verificó el intercambio de mensajes entre dos ventanas de la sala. El proveedor procesa alias, IP y mensajes; según su política, retira los mensajes de salas no moderadas después de diez minutos. No sirve para registrar ni publicar producciones de residentes.
 El formulario envía datos a FormSubmit mediante POST en otra pestaña y conserva el texto en la página de origen. Mantiene la protección reCAPTCHA del servicio y un campo contra envíos automatizados. No publica mensajes ni crea una lista de difusión. La recepción real debe comprobarla Favio.
 
 ## Activar el correo

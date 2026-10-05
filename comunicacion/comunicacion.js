@@ -29,7 +29,7 @@
   if(navigator.onLine===false){chatStatus.textContent='El chat necesita conexión. No se abrió la sala.';return;}
   if(frameBox.querySelector('iframe'))return;
   var frame=document.createElement('iframe');frame.className='chat-frame';frame.title='Sala pública Tejer la red: conversación en tiempo real';frame.referrerPolicy='no-referrer';frame.src=room+'?theme=theme--day';
-  frame.addEventListener('load',function(){chatStatus.textContent='La sala se cargó. Elegí un alias para conversar. Si no aparecen sus controles, usá el enlace para abrirla en otra pestaña.';});
+  frame.addEventListener('load',function(){chatStatus.textContent='La sala se cargó. Escribí un alias en «Name» y pulsá Intro para conversar. Si no podés entrar o no aparecen sus controles, abrí la misma sala en otra pestaña.';});
   frameBox.appendChild(frame);frameBox.hidden=false;start.hidden=true;leave.hidden=false;
   chatStatus.textContent='Abriendo la sala externa…';
  });
