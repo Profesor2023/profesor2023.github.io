@@ -10,7 +10,8 @@
  var consent=false,pixel=null,request=null,generation=0;
  try{consent=localStorage.getItem(consentKey)==='si';}catch(e){}
  var configured=options&&options.activas===true&&/^[a-z0-9][a-z0-9-]{0,59}$/.test(options.codigoGoatCounter);
- if(!configured){status.textContent='Conteo de visitas: no activo.';return;}
+ if(!configured){panel.hidden=true;return;}
+ panel.hidden=false;
  var endpoint='https://'+options.codigoGoatCounter+'.goatcounter.com';
  var path=options.ruta||'/visita-sitio';
  function remember(value){try{localStorage.setItem(consentKey,value?'si':'no');}catch(e){}}
