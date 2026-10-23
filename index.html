@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Educación social y tecnologías · Favio Velázquez</title>
-<meta name="description" content="Recursos educativos abiertos sobre educación social, inclusión digital y tecnologías, ANEP-IFES.">
+<title>Educación Social y Tecnología · Tejer la red</title>
+<meta name="description" content="Producción final de la unidad curricular Educación Social y Tecnología (ANEP-IFES, 2026): el recurso educativo abierto Tejer la red, de Favio Velázquez y América Palafox.">
 <script>
 (function(){try{if(!sessionStorage.getItem('portal:intro:v3'))document.documentElement.classList.add('intro-pending');}catch(e){document.documentElement.classList.add('intro-pending');}})();
 </script>
@@ -18,6 +18,18 @@ html.intro-pending .intro-stage img{position:absolute;inset:0;width:100%;height:
 html.intro-pending .intro-bird-art{opacity:0}
 html.intro-pending .intro-name{margin:.15rem 0 .85rem;color:#fff;font-weight:700;text-align:center}
 html.intro-pending #intro-skip{min-height:46px;border:2px solid #F0CF79;border-radius:999px;background:#fff;color:#00537F;font:700 1rem Arial,Helvetica,sans-serif;padding:.65rem 1.25rem}
+/* Código QR para compartir el sitio. */
+.compartir{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr);gap:1.6rem;align-items:center;background:var(--gc);border-radius:10px;padding:1.3rem;border-top:5px solid var(--azul);margin-top:1.2rem}
+.compartir figure{margin:0}
+.compartir figcaption{font-size:.85rem;text-align:center;margin-top:.4rem}
+.qr-svg{display:block;width:100%;height:auto;max-width:230px;margin:0 auto;background:#fff;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,.18)}
+.compartir p{margin:0 0 .7rem}
+.compartir .url{font-weight:700;overflow-wrap:anywhere}
+.descargas{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.4rem}
+.descargas a{display:inline-flex;align-items:center;min-height:44px;background:var(--azul);color:#fff;text-decoration:none;border-radius:7px;padding:.55rem .9rem;font-weight:700}
+.descargas a:focus-visible{outline:3px solid var(--oro);outline-offset:2px}
+@media (max-width:640px){.compartir{grid-template-columns:1fr;justify-items:center;text-align:center}.qr-svg{max-width:210px}.descargas{justify-content:center}}
+@media print{nav,footer,.skip-link,.site-intro,.descargas{display:none!important}.compartir{box-shadow:none}}
 </style>
 <link rel="stylesheet" href="estilo.css?v=trama-abierta-1">
 <link rel="manifest" href="manifest.webmanifest?v=azul-1">
@@ -33,7 +45,7 @@ html.intro-pending #intro-skip{min-height:46px;border:2px solid #F0CF79;border-r
 </head>
 <body>
 <div class="site-intro" id="site-intro" role="dialog" aria-modal="true" aria-labelledby="intro-title">
- <h1 class="sr-only" id="intro-title">Educación social y tecnologías</h1>
+ <h1 class="sr-only" id="intro-title">Educación Social y Tecnología</h1>
  <div class="intro-stage" aria-hidden="true">
   <img class="intro-base" src="marca-intro-base.png" width="512" height="512" alt="" fetchpriority="high">
   <span class="intro-ring"></span>
@@ -44,19 +56,19 @@ html.intro-pending #intro-skip{min-height:46px;border:2px solid #F0CF79;border-r
   <img class="intro-bird-art b5" src="marca-tejer-la-red.png" width="512" height="512" alt="">
   <img class="intro-bird-art b6" src="marca-tejer-la-red.png" width="512" height="512" alt="">
  </div>
- <p class="intro-name">Educación social y tecnologías</p>
+ <p class="intro-name">Educación Social y Tecnología</p>
  <button type="button" id="intro-skip">Entrar al sitio</button>
 </div>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 <nav aria-label="Secciones del sitio">
- <a class="brand" href="./">Favio Velázquez · Educación Social</a>
- <a href="" aria-current="page">Inicio</a><a href="tejer-la-red/">Tejer la red</a><a href="recursos/">Recursos educativos</a><a href="temas/">Temas de educación social</a><a href="comunicacion/">Dialogar y contactar</a>
+ <a class="brand" href="./">Educación Social y Tecnología · ANEP-IFES</a>
+ <a href="" aria-current="page">Inicio</a><a href="tejer-la-red/">Tejer la red</a><a href="comunicacion/">Dialogar y contactar</a><a href="#compartir">Compartir</a>
 </nav>
 <header class="hero">
  <div class="hero-inner">
   <div class="hero-copy">
-   <h1>Educación social y tecnologías</h1>
-   <p>Recursos educativos abiertos, materiales de trabajo y notas de estudio sobre la intervención socioeducativa y las tecnologías digitales. Producidos en el marco de la carrera de Educador Social del ANEP-IFES y de la docencia en educación técnica.</p>
+   <h1>Educación Social y Tecnología</h1>
+   <p>Producción final de la unidad curricular Educación Social y Tecnología, carrera de Educador Social, ANEP-IFES (2026). Reúne el recurso educativo abierto <em>Tejer la red</em>, de Favio Velázquez y América Palafox, y su canal de diálogo.</p>
   </div>
   <div class="hero-mark" aria-hidden="true">
    <img class="hero-emblem" src="marca-tejer-la-red.png" width="512" height="512" alt="" decoding="async">
@@ -66,7 +78,7 @@ html.intro-pending #intro-skip{min-height:46px;border:2px solid #F0CF79;border-r
 <main id="contenido">
 <section>
  <h2>Qué hay en este sitio</h2>
- <p>Cada sección reúne materiales propios de acceso libre. Están pensados para que otras educadoras y educadores puedan adaptarlos a su propio dispositivo institucional, con atribución y sin uso comercial.</p>
+ <p>El sitio está dedicado a la entrega de la unidad curricular. Sus materiales son de acceso libre: otras educadoras y educadores pueden adaptarlos a su propio dispositivo institucional, con atribución y sin uso comercial.</p>
  <div class="cards">
   <article class="card">
    <span class="estado">Publicado · versión 2.0</span>
@@ -75,17 +87,28 @@ html.intro-pending #intro-skip{min-height:46px;border:2px solid #F0CF79;border-r
    <a class="ir" href="tejer-la-red/">Abrir el recurso</a>
   </article>
   <article class="card verde">
-   <span class="estado">En construcción</span>
-   <h3>Recursos educativos</h3>
-   <p>Secuencias, fichas y materiales abiertos para el trabajo socioeducativo y para la enseñanza de pensamiento computacional.</p>
-   <a class="ir" href="recursos/">Ver la sección</a>
+   <span class="estado">Canal del recurso</span>
+   <h3>Dialogar y contactar</h3>
+   <p>Sala pública de conversación y formulario de consulta para proponer adaptaciones y devoluciones sobre <em>Tejer la red</em>. Cada servicio externo indica sus condiciones de privacidad.</p>
+   <a class="ir" href="comunicacion/">Ir a la sección</a>
   </article>
-  <article class="card oro">
-   <span class="estado">En construcción</span>
-   <h3>Temas de educación social</h3>
-   <p>Notas de lectura y síntesis sobre transmisión cultural, desigualdad digital y el lugar del educador social frente a las tecnologías.</p>
-   <a class="ir" href="temas/">Ver la sección</a>
-  </article>
+ </div>
+</section>
+<section id="compartir">
+ <h2>Compartir el sitio</h2>
+ <div class="compartir">
+  <figure>
+   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" class="qr-svg" role="img" aria-labelledby="qr-titulo"><title id="qr-titulo">Código QR que abre https://profesor2023.github.io/</title><path fill="#fff" d="M0 0h37v37h-37z"/><path stroke="#00537f" d="M4 4.5h7m3 0h2m1 0h1m4 0h1m1 0h1m1 0h7m-29 1h1m5 0h1m1 0h1m1 0h2m1 0h2m1 0h2m1 0h2m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m2 0h2m1 0h1m1 0h2m6 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h4m1 0h1m3 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m2 0h1m4 0h1m1 0h2m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m3 0h1m2 0h1m1 0h1m6 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h1m1 0h1m2 0h2m3 0h1m1 0h1m-20 1h1m1 0h4m1 0h3m1 0h1m4 0h1m1 0h1m1 0h2m1 0h2m1 0h1m-28 1h4m3 0h1m1 0h5m2 0h1m1 0h2m3 0h2m1 0h2m-28 1h1m2 0h2m1 0h1m1 0h5m2 0h2m4 0h2m3 0h1m-27 1h1m2 0h1m6 0h3m1 0h2m1 0h2m1 0h1m3 0h1m3 0h1m-27 1h3m1 0h3m7 0h1m2 0h1m1 0h2m4 0h1m-27 1h5m2 0h4m1 0h1m1 0h1m1 0h2m3 0h1m1 0h1m1 0h3m-27 1h1m1 0h1m1 0h1m1 0h2m1 0h2m1 0h1m3 0h2m1 0h1m1 0h1m1 0h1m1 0h2m-29 1h1m1 0h1m1 0h2m3 0h3m2 0h1m5 0h3m1 0h3m-25 1h2m1 0h3m2 0h2m1 0h1m1 0h1m7 0h1m1 0h1m1 0h1m-28 1h1m4 0h1m5 0h1m1 0h2m1 0h6m2 0h1m-25 1h2m1 0h1m1 0h4m1 0h1m1 0h6m1 0h2m2 0h1m1 0h1m2 0h1m-29 1h6m2 0h1m2 0h3m5 0h5m1 0h4m-29 1h4m2 0h1m5 0h1m2 0h1m1 0h1m2 0h5m1 0h1m-19 1h1m4 0h1m1 0h1m1 0h1m1 0h2m3 0h4m-28 1h7m2 0h3m2 0h3m2 0h2m1 0h1m1 0h1m1 0h2m-28 1h1m5 0h1m1 0h5m2 0h1m1 0h1m1 0h2m3 0h2m-26 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m2 0h1m1 0h7m2 0h2m-29 1h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m4 0h1m4 0h1m1 0h3m-28 1h1m1 0h3m1 0h1m5 0h1m1 0h2m1 0h2m1 0h2m1 0h2m1 0h3m-29 1h1m5 0h1m1 0h1m1 0h1m2 0h1m1 0h1m5 0h2m1 0h1m1 0h1m1 0h1m-29 1h7m2 0h2m8 0h3m1 0h2"/></svg>
+   <figcaption>profesor2023.github.io</figcaption>
+  </figure>
+  <div>
+   <p>Escaneá el código con la cámara del celular para abrir el sitio. Lleva a <span class="url">https://profesor2023.github.io/</span>.</p>
+   <p>Podés usarlo en carteles, en el cuadernillo o en la presentación. La versión SVG conserva la nitidez en cualquier tamaño; la PNG sirve para documentos y diapositivas.</p>
+   <div class="descargas">
+    <a href="qr-tejer-la-red.png" download="QR_Educacion_Social_y_Tecnologia.png">Descargar QR (PNG)</a>
+    <a href="qr-tejer-la-red.svg" download="QR_Educacion_Social_y_Tecnologia.svg">Descargar QR (SVG)</a>
+   </div>
+  </div>
  </div>
 </section>
 <section>
@@ -95,7 +118,7 @@ html.intro-pending #intro-skip{min-height:46px;border:2px solid #F0CF79;border-r
 </section>
 </main>
 <footer>
- <p>Favio Velázquez · Educador Social en formación, ANEP-IFES · Profesor de Informática, DGETP-UTU</p>
+ <p>Tejer la red · Favio Velázquez y América Palafox · Educación Social y Tecnología · Carrera de Educador Social, ANEP-IFES · 2026</p>
  <p>Contenidos propios bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">licencia CC BY-NC-SA 4.0</a> salvo indicación en contrario.</p>
 <div class="stats-panel" data-stats><p data-stats-status role="status">Conteo de visitas: no activo.</p><p>El conteo opcional usa GoatCounter. <a href="comunicacion/#privacidad">Cómo se tratan los datos</a>.</p><div class="community-actions"><button class="community-button" type="button" data-stats-allow hidden>Permitir el conteo de mi visita</button><button class="community-button" type="button" data-stats-revoke hidden>Retirar permiso de conteo</button></div></div>
 </footer>
