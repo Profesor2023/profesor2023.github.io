@@ -22,7 +22,16 @@
  var start=document.getElementById('open-live-chat');
  var leave=document.getElementById('close-live-chat');
  var room='https://tlk.io/'+encodeURIComponent(config.sala);
- document.getElementById('chat-external-link').href=room;
+ var external=document.getElementById('chat-external-link');
+ function updateExternalLink(){
+  var accepted=chatConsent.checked;
+  if(accepted){external.href=room;external.removeAttribute('tabindex');}
+  else{external.removeAttribute('href');external.tabIndex=-1;}
+  external.setAttribute('aria-disabled',accepted?'false':'true');
+  external.textContent=accepted?'Abrir la misma sala en otra pestaña':'Abrir la misma sala en otra pestaña (aceptar primero)';
+ }
+ chatConsent.addEventListener('change',updateExternalLink);
+ updateExternalLink();
  start.disabled=false;
  start.addEventListener('click',function(){
   if(!chatConsent.reportValidity())return;
@@ -33,5 +42,5 @@
   frameBox.appendChild(frame);frameBox.hidden=false;start.hidden=true;leave.hidden=false;
   chatStatus.textContent='Abriendo la sala externa…';
  });
- leave.addEventListener('click',function(){frameBox.replaceChildren();frameBox.hidden=true;start.hidden=false;leave.hidden=true;chatConsent.checked=false;chatStatus.textContent='Saliste del chat. No se enviarán más mensajes desde esta ventana.';start.focus();});
+ leave.addEventListener('click',function(){frameBox.replaceChildren();frameBox.hidden=true;start.hidden=false;leave.hidden=true;chatConsent.checked=false;updateExternalLink();chatStatus.textContent='Saliste del chat. No se enviarán más mensajes desde esta ventana.';start.focus();});
 })();
